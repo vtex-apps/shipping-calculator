@@ -1,3 +1,5 @@
 {
-  "store/shipping-calculator.delivery": "Entrega"
+  "store/shipping-calculator.delivery": "Entrega",
+  "store/shipping-calculator.deliveryFor": "Entrega en",
+  "store/shipping-calculator.edit": "cambiar"
 }

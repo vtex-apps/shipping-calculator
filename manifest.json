@@ -17,7 +17,8 @@
   "dependencies": {
     "vtex.address-form": "4.x",
     "vtex.country-codes": "2.x",
-    "vtex.styleguide": "9.x"
+    "vtex.styleguide": "9.x",
+    "vtex.shipping-estimate-translator": "2.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

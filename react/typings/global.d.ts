@@ -34,4 +34,12 @@ interface AddressWithValidation {
 
 interface AddressField {
   value: string | number[]
+  valid: boolean | null
+}
+
+interface DeliveryOption {
+  id: string
+  value: number
+  estimate: string
+  isSelected: boolean
 }
