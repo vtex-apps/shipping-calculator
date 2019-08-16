@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## Changed
-- Removed `injectIntl` from example
+## Added
 
-- **Component** Create the VTEX Store Component _IO Base App_
+- Component blocks setup.
+- Initial component with postalCode calculator
