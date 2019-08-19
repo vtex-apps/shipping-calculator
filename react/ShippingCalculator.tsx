@@ -44,7 +44,6 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
     const geoCoordinatesValid =
       address && address.geoCoordinates && address.geoCoordinates.valid
 
-    console.log('address', address)
     if (postalCodeValid || geoCoordinatesValid) {
       setShowResult(true)
     }
