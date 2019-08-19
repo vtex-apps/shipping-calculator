@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
-import FormattedPrice from './FormattedPrice'
+import { FormattedCurrency } from 'vtex.format-currency'
 
 interface CustomProps {
   option: DeliveryOption
@@ -12,7 +12,7 @@ const ShippingInfo: FunctionComponent<CustomProps> = ({ option }) => {
       <p className="flex flex-row justify-between mv3">
         <span>{option.id}</span>{' '}
         <span>
-          <FormattedPrice value={option.value} currency="BRL" />
+          <FormattedCurrency value={option.value / 100} />
         </span>
       </p>
       <p className="c-muted-1 mv3">

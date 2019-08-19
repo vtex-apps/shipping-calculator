@@ -15,8 +15,9 @@
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "vtex.address-form": "4.x",
+    "vtex.address-form": "3.x",
     "vtex.country-codes": "2.x",
+    "vtex.format-currency": "0.x",
     "vtex.styleguide": "9.x",
     "vtex.shipping-estimate-translator": "2.x"
   },
