@@ -2,6 +2,7 @@ import React, { useState, FunctionComponent } from 'react'
 import PostalCode from './components/PostalCode'
 import ShippingResult from './components/ShippingResult'
 import styles from './styles.css'
+import { useRuntime } from 'vtex.render-runtime'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { components, helpers } from 'vtex.address-form'
 const { AddressContainer, AddressRules, StyleguideInput } = components
@@ -23,10 +24,11 @@ type CustomProps = {
 
 const ShippingCalculator: FunctionComponent<CustomProps> = ({
   selectedAddress,
-  accountName,
   deliveryOptions,
   countries,
 }) => {
+  const { account } = useRuntime()
+
   const [address, setAddress] = useState<AddressWithValidation>(
     addValidation(selectedAddress)
   )
@@ -59,7 +61,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
         shouldUseIOFetching
       >
         <AddressContainer
-          accountName={accountName}
+          accountName={account}
           address={address}
           Input={StyleguideInput}
           onChangeAddress={handleAddressChange}
