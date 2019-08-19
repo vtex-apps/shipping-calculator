@@ -20,11 +20,13 @@ defineMessages({
 interface CustomProps {
   address: AddressWithValidation
   options: DeliveryOption[]
+  setShowResult: any
 }
 
 const ShippingResult: FunctionComponent<CustomProps> = ({
   address,
   options,
+  setShowResult,
 }) => {
   return (
     <Fragment>
@@ -33,7 +35,11 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
           <span>
             <FormattedMessage id="store/shipping-calculator.deliveryFor" />
           </span>
-          <Button variation="tertiary" size="small">
+          <Button
+            variation="tertiary"
+            size="small"
+            onClick={() => setShowResult(false)}
+          >
             <FormattedMessage id="store/shipping-calculator.edit" />
           </Button>
         </p>

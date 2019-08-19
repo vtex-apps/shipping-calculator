@@ -4,7 +4,6 @@ import ShippingResult from './components/ShippingResult'
 import styles from './styles.css'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { components, helpers } from 'vtex.address-form'
-import { newAddress } from './utils/address'
 const { AddressContainer, AddressRules, StyleguideInput } = components
 const { addValidation } = helpers
 
@@ -15,26 +14,21 @@ defineMessages({
   },
 })
 
-const addressFromOrderForm: Address = newAddress({
-  country: 'BRA',
-  addressId: '1',
-  addressType: 'residential',
-  number: '',
-})
-const accountName = 'vtexgame1'
-const countries = ['BRA', 'USA']
-const options = [
-  {
-    id: 'Entrega Sustentável',
-    value: 100,
-    estimate: '1bd',
-    isSelected: true,
-  },
-]
+type CustomProps = {
+  selectedAddress: Address
+  accountName: string
+  deliveryOptions: DeliveryOption[]
+  countries: string[]
+}
 
-const ShippingCalculator: FunctionComponent = () => {
+const ShippingCalculator: FunctionComponent<CustomProps> = ({
+  selectedAddress,
+  accountName,
+  deliveryOptions,
+  countries,
+}) => {
   const [address, setAddress] = useState<AddressWithValidation>(
-    addValidation(addressFromOrderForm)
+    addValidation(selectedAddress)
   )
 
   const [showResult, setShowResult] = useState<boolean>(false)
@@ -43,12 +37,14 @@ const ShippingCalculator: FunctionComponent = () => {
     setAddress(address)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: any) => {
+    event.preventDefault()
     const postalCodeValid =
       address && address.postalCode && address.postalCode.valid
     const geoCoordinatesValid =
       address && address.geoCoordinates && address.geoCoordinates.valid
 
+    console.log('address', address)
     if (postalCodeValid || geoCoordinatesValid) {
       setShowResult(true)
     }
@@ -56,9 +52,9 @@ const ShippingCalculator: FunctionComponent = () => {
 
   return (
     <div className={`${styles.container} flex flex-column pv6 ph4`}>
-      <h2>
+      <p className="t-heading-5 c-on-muted-3">
         <FormattedMessage id="store/shipping-calculator.delivery" />
-      </h2>
+      </p>
       <AddressRules
         country={address.country && address.country.value}
         shouldUseIOFetching
@@ -70,7 +66,11 @@ const ShippingCalculator: FunctionComponent = () => {
           onChangeAddress={handleAddressChange}
         >
           {showResult ? (
-            <ShippingResult address={address} options={options} />
+            <ShippingResult
+              address={address}
+              options={deliveryOptions}
+              setShowResult={setShowResult}
+            />
           ) : (
             <PostalCode handleSubmit={handleSubmit} countries={countries} />
           )}
