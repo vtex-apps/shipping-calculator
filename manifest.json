@@ -1,6 +1,6 @@
 {
   "vendor": "vtex",
-  "name": "base-store-component",
+  "name": "shipping-calculator",
   "version": "0.0.1",
   "title": "IO Base Component",
   "description": "IO Base component",
@@ -15,6 +15,11 @@
     "postreleasy": "vtex publish --verbose"
   },
   "dependencies": {
-    "vtex.styleguide": "9.x"
-  }
+    "vtex.address-form": "3.x",
+    "vtex.country-codes": "2.x",
+    "vtex.format-currency": "0.x",
+    "vtex.styleguide": "9.x",
+    "vtex.shipping-estimate-translator": "2.x"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

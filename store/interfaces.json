@@ -1,5 +1,5 @@
 {
-  "base-store-component": {
-    "component": "Example"
+  "shipping-calculator": {
+    "component": "ShippingCalculator"
   }
 }
