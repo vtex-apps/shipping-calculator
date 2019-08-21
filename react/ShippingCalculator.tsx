@@ -40,8 +40,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
     setAddress(address)
   }
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault()
+  const handleSubmit = () => {
     const postalCodeValid =
       address && address.postalCode && address.postalCode.valid
     const geoCoordinatesValid =
@@ -53,7 +52,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
   }
 
   return (
-    <div className={`${styles.container} flex flex-column pv6 ph4`}>
+    <div className={`${styles.container} flex flex-column pv6`}>
       <p className="t-heading-5 c-on-muted-3">
         <FormattedMessage id="store/shipping-calculator.delivery" />
       </p>
@@ -80,6 +79,11 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
       </AddressRules>
     </div>
   )
+}
+
+ShippingCalculator.defaultProps = {
+  countries: [],
+  deliveryOptions: [],
 }
 
 export default ShippingCalculator
