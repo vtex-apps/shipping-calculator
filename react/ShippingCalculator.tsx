@@ -5,6 +5,7 @@ import styles from './styles.css'
 import { useRuntime } from 'vtex.render-runtime'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { components, helpers } from 'vtex.address-form'
+import { newAddress } from './utils/address'
 const { AddressContainer, AddressRules, StyleguideInput } = components
 const { addValidation } = helpers
 
@@ -27,10 +28,10 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
   deliveryOptions,
   countries,
 }) => {
-  const { account } = useRuntime()
+  const { account, culture } = useRuntime()
 
   const [address, setAddress] = useState<AddressWithValidation>(
-    addValidation(selectedAddress)
+    addValidation(selectedAddress || newAddress({ country: culture.country }))
   )
 
   const [showResult, setShowResult] = useState<boolean>(false)
