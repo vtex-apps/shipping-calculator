@@ -15,6 +15,23 @@ interface Address {
   street?: string
 }
 
+interface NewAddress {
+  addressId?: string
+  addressQuery?: string
+  addressType?: string
+  city?: string
+  complement?: string
+  country?: string
+  geoCoordinates?: number[]
+  neighborhood?: string
+  number?: string
+  postalCode?: string
+  receiverName?: string
+  reference?: string
+  state?: string
+  street?: string
+}
+
 interface AddressWithValidation {
   addressId: AddressField
   addressQuery?: AddressField

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Fixed
+
+- Container styles;
+
+## Added
+
+- Default props with new address if it does not come from props
+
 ## [0.1.0] - 2019-08-20
 
 ## Added
