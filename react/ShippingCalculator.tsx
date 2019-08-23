@@ -1,5 +1,4 @@
 import React, { useState, FunctionComponent } from 'react'
-import styles from './styles.css'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import EstimateShipping from './components/EstimateShipping'
@@ -31,10 +30,8 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
   )
 
   return (
-    <div className={`${styles.container} flex flex-column pt6`}>
-      <p className="t-heading-5 c-on-muted-3">
-        <FormattedMessage id="store/shipping-calculator.delivery" />
-      </p>
+    <div className="flex flex-column c-on-base">
+      <h5 className="t-heading-5 mt6 mb5"><FormattedMessage id="store/shipping-calculator.delivery" /></h5>
       {showEstimateShipping ? (
         <EstimateShipping
           selectedAddress={selectedAddress}
@@ -42,7 +39,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = ({
           countries={countries}
         />
       ) : (
-        <div className="mb5">
+        <div>
           <Button
             variation="tertiary"
             collapseLeft
