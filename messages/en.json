@@ -2,5 +2,6 @@
   "store/shipping-calculator.delivery": "Delivery",
   "store/shipping-calculator.deliveryFor": "Delivery for",
   "store/shipping-calculator.edit": "edit",
-  "store/shipping-calculator.estimate": "estimate"
+  "store/shipping-calculator.estimate": "estimate",
+  "store/shipping-calculator.viewDeliveryOptions": "View delivery options"
 }
