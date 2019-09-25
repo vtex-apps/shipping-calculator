@@ -49,6 +49,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = () => {
           <Button
             variation="tertiary"
             collapseLeft
+            noUpperCase
             onClick={() => setShowEstimateShipping(true)}
           >
             <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />
