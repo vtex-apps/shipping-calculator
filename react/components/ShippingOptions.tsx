@@ -9,7 +9,7 @@ interface CustomProps {
 const ShippingOptions: FunctionComponent<CustomProps> = ({ options }) => {
   const handleChange = (event: any) => {
     // TODO: implement provider function to update delivery options
-    console.log(event.targe.value)
+    console.log(event.target.value)
   }
 
   return (

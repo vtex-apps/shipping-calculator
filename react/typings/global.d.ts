@@ -56,7 +56,7 @@ interface AddressField {
 
 interface DeliveryOption {
   id: string
-  value: number
+  price: number
   estimate: string
   isSelected: boolean
 }

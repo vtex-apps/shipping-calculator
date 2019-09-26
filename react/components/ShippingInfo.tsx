@@ -9,10 +9,10 @@ interface CustomProps {
 const ShippingInfo: FunctionComponent<CustomProps> = ({ option }) => {
   return (
     <div className="w-100">
-      <p className="flex flex-row justify-between mv3">
+      <p className="flex flex-row justify-between mt0 mb2">
         <span>{option.id}</span>{' '}
         <span>
-          <FormattedCurrency value={option.value / 100} />
+          <FormattedCurrency value={option.price / 100} />
         </span>
       </p>
       <p className="c-muted-1 mv3">
