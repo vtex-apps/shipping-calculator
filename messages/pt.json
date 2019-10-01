@@ -1,7 +1,7 @@
 {
   "store/shipping-calculator.delivery": "Entrega",
-  "store/shipping-calculator.deliveryFor": "Entrega em",
-  "store/shipping-calculator.edit": "editar",
+  "store/shipping-calculator.deliveryFor": "Opções para",
+  "store/shipping-calculator.edit": "alterar",
   "store/shipping-calculator.estimate": "calcular",
   "store/shipping-calculator.viewDeliveryOptions": "Ver opções de entrega"
 }
