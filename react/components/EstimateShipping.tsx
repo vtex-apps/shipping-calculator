@@ -27,7 +27,9 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
 
   const [address, setAddress] = useState<AddressWithValidation>(
     addValidation(
-      newAddress(selectedAddress) || newAddress({ country: culture.country })
+      selectedAddress
+        ? newAddress(selectedAddress)
+        : newAddress({ country: culture.country })
     )
   )
 
