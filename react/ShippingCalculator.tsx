@@ -33,7 +33,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = () => {
 
   return (
     <div className="flex flex-column c-on-base">
-      <h5 className="t-heading-5 mt0 mb5">
+      <h5 className="t-heading-5 mt0 mb3">
         <FormattedMessage id="store/shipping-calculator.delivery" />
       </h5>
       {showEstimateShipping ? (
@@ -45,7 +45,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = () => {
           selectDeliveryOption={selectDeliveryOption}
         />
       ) : (
-        <div>
+        <div className="mt3">
           <Button
             variation="tertiary"
             collapseLeft

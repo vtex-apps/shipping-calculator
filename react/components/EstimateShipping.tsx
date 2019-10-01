@@ -73,7 +73,9 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
             selectDeliveryOption={selectDeliveryOption}
           />
         ) : (
-          <PostalCode handleSubmit={handleSubmit} countries={countries} />
+          <div className="mt4">
+            <PostalCode handleSubmit={handleSubmit} countries={countries} />
+          </div>
         )}
       </AddressContainer>
     </AddressRules>

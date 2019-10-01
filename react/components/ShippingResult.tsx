@@ -33,20 +33,19 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
 
   return (
     <Fragment>
-      <div className="mb7">
-        <p className="w-100 flex flex-row items-center justify-between c-on-muted-3 mv0">
-          <span>
-            <FormattedMessage id="store/shipping-calculator.deliveryFor" />
-          </span>
+      <div className="mb5 flex items-center">
+        <div className="flex-auto">
+          <span className="fw5"><FormattedMessage id="store/shipping-calculator.deliveryFor" /></span> {postalCode}
+        </div>
+        <div className="flex-none">
           <Button
-            variation="tertiary"
-            size="small"
-            onClick={() => setShowResult(false)}
-          >
-            <FormattedMessage id="store/shipping-calculator.edit" />
-          </Button>
-        </p>
-        <span>{postalCode}</span>
+              collapseRight
+              variation="tertiary"
+              onClick={() => setShowResult(false)}
+            >
+              <FormattedMessage id="store/shipping-calculator.edit" />
+            </Button>
+        </div>
       </div>
       <ShippingOptions
         options={options}

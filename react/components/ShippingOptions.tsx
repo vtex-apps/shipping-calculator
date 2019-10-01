@@ -19,19 +19,21 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
     <Fragment>
       {options &&
         options.length > 0 &&
-        options.map(option => {
+        options.map((option, i) => {
           const optionId = `shipping-option-${option.id}`
 
           return (
-            <Radio
-              key={optionId}
-              name={optionId}
-              id={optionId}
-              checked={option.isSelected}
-              onChange={handleChange}
-              value={option.id}
-              label={<ShippingInfo option={option} />}
-            />
+            <div className={i + 1 < options.length ? 'mb5' : ''}>
+              <Radio
+                key={optionId}
+                name={optionId}
+                id={optionId}
+                checked={option.isSelected}
+                onChange={handleChange}
+                value={option.id}
+                label={<ShippingInfo option={option} />}
+              />
+            </div>
           )
         })}
     </Fragment>
