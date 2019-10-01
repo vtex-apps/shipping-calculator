@@ -4,12 +4,15 @@ import ShippingInfo from './ShippingInfo'
 
 interface CustomProps {
   options: DeliveryOption[]
+  selectDeliveryOption: any
 }
 
-const ShippingOptions: FunctionComponent<CustomProps> = ({ options }) => {
+const ShippingOptions: FunctionComponent<CustomProps> = ({
+  options,
+  selectDeliveryOption,
+}) => {
   const handleChange = (event: any) => {
-    // TODO: implement provider function to update delivery options
-    console.log(event.target.value)
+    selectDeliveryOption(event.target.value)
   }
 
   return (

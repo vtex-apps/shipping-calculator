@@ -24,6 +24,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = () => {
     selectedAddress,
     deliveryOptions,
     countries,
+    selectDeliveryOption,
   } = useOrderShipping()
 
   const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
@@ -41,6 +42,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = () => {
           deliveryOptions={deliveryOptions}
           countries={countries}
           insertAddress={insertAddress}
+          selectDeliveryOption={selectDeliveryOption}
         />
       ) : (
         <div>

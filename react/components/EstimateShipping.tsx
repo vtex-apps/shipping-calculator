@@ -13,6 +13,7 @@ interface CustomProps {
   selectedAddress: Address
   deliveryOptions: DeliveryOption[]
   countries: string[]
+  selectDeliveryOption: any
 }
 
 const EstimateShipping: FunctionComponent<CustomProps> = ({
@@ -20,6 +21,7 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
   selectedAddress,
   deliveryOptions,
   countries,
+  selectDeliveryOption,
 }) => {
   const { account, culture } = useRuntime()
 
@@ -66,6 +68,7 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
             address={address}
             options={deliveryOptions}
             setShowResult={setShowResult}
+            selectDeliveryOption={selectDeliveryOption}
           />
         ) : (
           <PostalCode handleSubmit={handleSubmit} countries={countries} />
