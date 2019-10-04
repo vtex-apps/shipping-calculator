@@ -28,7 +28,7 @@ const ShippingCalculator: FunctionComponent<CustomProps> = () => {
   } = useOrderShipping()
 
   const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
-    deliveryOptions.length > 0
+    selectedAddress && selectedAddress.postalCode ? true : false
   )
 
   return (
