@@ -16,9 +16,7 @@ defineMessages({
   },
 })
 
-interface CustomProps {}
-
-const ShippingCalculator: FunctionComponent<CustomProps> = () => {
+const ShippingCalculator: FunctionComponent = () => {
   const {
     insertAddress,
     selectedAddress,

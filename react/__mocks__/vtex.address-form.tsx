@@ -18,9 +18,9 @@ import AddressSummary from '@vtex/address-form/lib/AddressSummary'
 
 // Added react context for injectRules mock
 // eslint-disable-next-line
-import React, { Component } from 'react'
+import { Component } from 'react'
 
-function injectRules(component) {
+function injectRules(component: Component) {
   return component
 }
 
@@ -36,11 +36,11 @@ const AddressContainer = class extends Component {
   }
 }
 
-const shapes = {
+export const shapes = {
   AddressShapeWithValidation,
 }
 
-const helpers = {
+export const helpers = {
   addValidation,
   removeValidation,
   validateAddress,
@@ -50,22 +50,20 @@ const helpers = {
   getAddressByGeolocation,
 }
 
-const countries = {
+export const countries = {
   defaultRules: {},
 }
 
-const inputs = {
+export const inputs = {
   InputError,
   InputText,
   DefaultInput,
 }
 
-const components = {
+export const components = {
   AddressSummary,
   AddressContainer,
   AddressRules,
   CountrySelector,
   PostalCodeGetter,
 }
-
-module.exports = { components, countries, inputs, helpers, shapes }
