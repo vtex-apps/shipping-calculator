@@ -1,3 +1,3 @@
-export const FormattedCurrency = (_: any) => {
+export const FormattedCurrency = () => {
   return ''
 }

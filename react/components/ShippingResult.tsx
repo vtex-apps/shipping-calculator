@@ -19,8 +19,8 @@ defineMessages({
 interface CustomProps {
   address: AddressWithValidation
   options: DeliveryOption[]
-  setShowResult: any
-  selectDeliveryOption: any
+  setShowResult: (showResult: boolean) => void
+  selectDeliveryOption: (option: string) => void
 }
 
 const ShippingResult: FunctionComponent<CustomProps> = ({
@@ -35,16 +35,19 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
     <Fragment>
       <div className="mb5 flex items-center">
         <div className="flex-auto">
-          <span className="fw5"><FormattedMessage id="store/shipping-calculator.deliveryFor" /></span> {postalCode}
+          <span className="fw5">
+            <FormattedMessage id="store/shipping-calculator.deliveryFor" />
+          </span>{' '}
+          {postalCode}
         </div>
         <div className="flex-none">
           <Button
-              collapseRight
-              variation="tertiary"
-              onClick={() => setShowResult(false)}
-            >
-              <FormattedMessage id="store/shipping-calculator.edit" />
-            </Button>
+            collapseRight
+            variation="tertiary"
+            onClick={() => setShowResult(false)}
+          >
+            <FormattedMessage id="store/shipping-calculator.edit" />
+          </Button>
         </div>
       </div>
       <ShippingOptions

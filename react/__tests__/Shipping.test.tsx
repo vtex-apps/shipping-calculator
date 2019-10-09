@@ -5,6 +5,14 @@ import { OrderShippingContext } from 'vtex.order-shipping/OrderShipping'
 
 import ShippingCalculator from '../ShippingCalculator'
 
+interface Context {
+  countries: string[]
+  selectedAddress: CheckoutAddress
+  insertAddress: (address: CheckoutAddress) => void
+  deliveryOptions: DeliveryOption[]
+  selectDeliveryOption: (option: string) => void
+}
+
 const mockedAddress = {
   addressId: '1569522356558',
   addressType: 'residential',
@@ -36,7 +44,7 @@ const contextInfo = {
 }
 
 describe('Shipping', () => {
-  const renderComponent = (customProps: any) => {
+  const renderComponent = (customProps: Context) => {
     const wrapper = render(
       <OrderShippingContext.Provider value={customProps}>
         <ShippingCalculator />

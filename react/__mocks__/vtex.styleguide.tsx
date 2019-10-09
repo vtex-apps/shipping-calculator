@@ -3,4 +3,4 @@ import Input from '@vtex/styleguide/lib/Input'
 import Tag from '@vtex/styleguide/lib/Tag'
 import Radio from '@vtex/styleguide/lib/Radio'
 
-module.exports = { Button, Input, Tag, Radio }
+export { Button, Input, Tag, Radio }

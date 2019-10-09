@@ -4,15 +4,15 @@ import ShippingInfo from './ShippingInfo'
 
 interface CustomProps {
   options: DeliveryOption[]
-  selectDeliveryOption: any
+  selectDeliveryOption: (option: string) => void
 }
 
 const ShippingOptions: FunctionComponent<CustomProps> = ({
   options,
   selectDeliveryOption,
 }) => {
-  const handleChange = (event: any) => {
-    selectDeliveryOption(event.target.value)
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    selectDeliveryOption(event.currentTarget.value)
   }
 
   return (
@@ -23,7 +23,7 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
           const optionId = `shipping-option-${option.id}`
 
           return (
-            <div className={i + 1 < options.length ? 'mb5' : ''}>
+            <div key={optionId} className={i + 1 < options.length ? 'mb5' : ''}>
               <Radio
                 key={optionId}
                 name={optionId}

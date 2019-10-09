@@ -9,11 +9,11 @@ const { AddressContainer, AddressRules, StyleguideInput } = components
 const { addValidation, removeValidation } = helpers
 
 interface CustomProps {
-  insertAddress: any
+  insertAddress: (address: CheckoutAddress) => void
   selectedAddress: Address
   deliveryOptions: DeliveryOption[]
   countries: string[]
-  selectDeliveryOption: any
+  selectDeliveryOption: (option: string) => void
 }
 
 const EstimateShipping: FunctionComponent<CustomProps> = ({
