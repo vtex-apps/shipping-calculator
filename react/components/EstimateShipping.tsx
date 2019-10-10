@@ -4,39 +4,52 @@ import ShippingResult from './ShippingResult'
 import { useRuntime } from 'vtex.render-runtime'
 import { components, helpers } from 'vtex.address-form'
 import { newAddress } from '../utils/address'
-const { AddressContainer, AddressRules, StyleguideInput } = components
-const { addValidation } = helpers
 
-type CustomProps = {
+const { AddressContainer, AddressRules, StyleguideInput } = components
+const { addValidation, removeValidation } = helpers
+
+interface CustomProps {
+  insertAddress: (address: CheckoutAddress) => void
   selectedAddress: Address
   deliveryOptions: DeliveryOption[]
   countries: string[]
+  selectDeliveryOption: (option: string) => void
 }
 
 const EstimateShipping: FunctionComponent<CustomProps> = ({
+  insertAddress,
   selectedAddress,
   deliveryOptions,
   countries,
+  selectDeliveryOption,
 }) => {
   const { account, culture } = useRuntime()
 
   const [address, setAddress] = useState<AddressWithValidation>(
-    addValidation(selectedAddress || newAddress({ country: culture.country }))
+    addValidation(
+      selectedAddress
+        ? newAddress(selectedAddress)
+        : newAddress({ country: culture.country })
+    )
   )
 
-  const [showResult, setShowResult] = useState<boolean>(false)
+  const [showResult, setShowResult] = useState<boolean>(
+    selectedAddress && selectedAddress.postalCode ? true : false
+  )
 
   const handleAddressChange = (address: AddressWithValidation) => {
     setAddress(address)
   }
 
   const handleSubmit = () => {
+    const addressWithoutValidation = removeValidation(address)
     const postalCodeValid =
       address && address.postalCode && address.postalCode.valid
     const geoCoordinatesValid =
       address && address.geoCoordinates && address.geoCoordinates.valid
 
     if (postalCodeValid || geoCoordinatesValid) {
+      insertAddress(addressWithoutValidation)
       setShowResult(true)
     }
   }
@@ -57,9 +70,12 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
             address={address}
             options={deliveryOptions}
             setShowResult={setShowResult}
+            selectDeliveryOption={selectDeliveryOption}
           />
         ) : (
-          <PostalCode handleSubmit={handleSubmit} countries={countries} />
+          <div className="mt4">
+            <PostalCode handleSubmit={handleSubmit} countries={countries} />
+          </div>
         )}
       </AddressContainer>
     </AddressRules>

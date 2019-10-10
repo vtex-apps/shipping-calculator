@@ -1,9 +1,8 @@
 import React, { FunctionComponent, Fragment } from 'react'
-import { components, helpers } from 'vtex.address-form'
+import { helpers } from 'vtex.address-form'
 import { Button } from 'vtex.styleguide'
 import ShippingOptions from './ShippingOptions'
 import { FormattedMessage, defineMessages } from 'react-intl'
-const { AddressSummary } = components
 const { removeValidation } = helpers
 
 defineMessages({
@@ -20,32 +19,41 @@ defineMessages({
 interface CustomProps {
   address: AddressWithValidation
   options: DeliveryOption[]
-  setShowResult: any
+  setShowResult: (showResult: boolean) => void
+  selectDeliveryOption: (option: string) => void
 }
 
 const ShippingResult: FunctionComponent<CustomProps> = ({
   address,
   options,
   setShowResult,
+  selectDeliveryOption,
 }) => {
+  const { postalCode } = removeValidation(address)
+
   return (
     <Fragment>
-      <div className="mb7">
-        <p className="w-100 flex flex-row items-center justify-between c-on-muted-3 mv0">
-          <span>
+      <div className="mb5 flex items-center">
+        <div className="flex-auto">
+          <span className="fw5">
             <FormattedMessage id="store/shipping-calculator.deliveryFor" />
-          </span>
+          </span>{' '}
+          {postalCode}
+        </div>
+        <div className="flex-none">
           <Button
+            collapseRight
             variation="tertiary"
-            size="small"
             onClick={() => setShowResult(false)}
           >
             <FormattedMessage id="store/shipping-calculator.edit" />
           </Button>
-        </p>
-        <AddressSummary address={removeValidation(address)} />
+        </div>
       </div>
-      <ShippingOptions options={options} />
+      <ShippingOptions
+        options={options}
+        selectDeliveryOption={selectDeliveryOption}
+      />
     </Fragment>
   )
 }

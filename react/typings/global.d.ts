@@ -56,7 +56,30 @@ interface AddressField {
 
 interface DeliveryOption {
   id: string
-  value: number
+  price: number
+  estimate: string
+  isSelected: boolean
+}
+
+interface CheckoutAddress {
+  addressType: string
+  receiverName: string
+  addressId: string
+  postalCode: string
+  city: string
+  state: string
+  country: string
+  street: string
+  number: string
+  neighborhood: string
+  complement: string
+  reference: string | null
+  geoCoordinates: number[]
+}
+
+interface DeliveryOption {
+  id: string
+  price: number
   estimate: string
   isSelected: boolean
 }

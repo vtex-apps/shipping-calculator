@@ -3,6 +3,8 @@ import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import EstimateShipping from './components/EstimateShipping'
 
+import { useOrderShipping } from 'vtex.order-shipping/OrderShipping'
+
 defineMessages({
   delivery: {
     defaultMessage: 'Delivery',
@@ -14,35 +16,38 @@ defineMessages({
   },
 })
 
-type CustomProps = {
-  selectedAddress: Address
-  deliveryOptions: DeliveryOption[]
-  countries: string[]
-}
+const ShippingCalculator: FunctionComponent = () => {
+  const {
+    insertAddress,
+    selectedAddress,
+    deliveryOptions,
+    countries,
+    selectDeliveryOption,
+  } = useOrderShipping()
 
-const ShippingCalculator: FunctionComponent<CustomProps> = ({
-  selectedAddress,
-  deliveryOptions,
-  countries,
-}) => {
   const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
-    deliveryOptions.length > 0
+    selectedAddress && selectedAddress.postalCode ? true : false
   )
 
   return (
     <div className="flex flex-column c-on-base">
-      <h5 className="t-heading-5 mt6 mb5"><FormattedMessage id="store/shipping-calculator.delivery" /></h5>
+      <h5 className="t-heading-5 mt0 mb3">
+        <FormattedMessage id="store/shipping-calculator.delivery" />
+      </h5>
       {showEstimateShipping ? (
         <EstimateShipping
           selectedAddress={selectedAddress}
           deliveryOptions={deliveryOptions}
           countries={countries}
+          insertAddress={insertAddress}
+          selectDeliveryOption={selectDeliveryOption}
         />
       ) : (
-        <div>
+        <div className="mt3">
           <Button
             variation="tertiary"
             collapseLeft
+            noUpperCase
             onClick={() => setShowEstimateShipping(true)}
           >
             <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />

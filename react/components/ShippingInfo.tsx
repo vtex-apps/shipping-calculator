@@ -8,16 +8,16 @@ interface CustomProps {
 
 const ShippingInfo: FunctionComponent<CustomProps> = ({ option }) => {
   return (
-    <div className="w-100">
-      <p className="flex flex-row justify-between mv3">
-        <span>{option.id}</span>{' '}
-        <span>
-          <FormattedCurrency value={option.value / 100} />
-        </span>
-      </p>
-      <p className="c-muted-1 mv3">
-        <TranslateEstimate shippingEstimate={option.estimate} />
-      </p>
+    <div className="flex w-100">
+      <div className="flex-auto">
+        <div className="mb3">{option.id}</div>
+        <div className="c-muted-1">
+          <TranslateEstimate shippingEstimate={option.estimate} />
+        </div>
+      </div>
+      <div className="flex-none">
+        <FormattedCurrency value={option.price / 100} />
+      </div>
     </div>
   )
 }
