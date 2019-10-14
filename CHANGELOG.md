@@ -7,20 +7,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- `PostalCodeGetter` with `autoFocus` now.
+
 ## [0.3.0] - 2019-10-10
 
-## Added
+### Added
 
 - Selects a delivery option.
 - Estimates shipping value.
 
-## Changed
+### Changed
 
 - Title and postal code margin values.
 
 ## [0.2.1] - 2019-08-23
 
-## Fixed
+### Fixed
 
 - Some element margins.
 
@@ -32,17 +36,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.1] - 2019-08-21
 
-## Fixed
+### Fixed
 
 - Container styles.
 
-## Added
+### Added
 
 - Default props with new address if it does not come from props.
 
 ## [0.1.0] - 2019-08-20
 
-## Added
+### Added
 
 - Component blocks setup;
 - Initial component with postalCode calculator;
