@@ -50,6 +50,7 @@ const PostalCode: FunctionComponent<Props> = ({
         Button={StyleguideButton}
         submitLabel={getSubmitMessage()}
         onSubmit={handleSubmit}
+        autoFocus
       />
     </Fragment>
   )
