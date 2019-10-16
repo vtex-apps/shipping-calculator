@@ -44,9 +44,10 @@ const PostalCode: FunctionComponent<Props> = ({
   return (
     <Fragment>
       {translatedCountries.length > 1 && (
-        <CountrySelector shipsTo={translatedCountries} />
+        <CountrySelector id="country-selector" shipsTo={translatedCountries} />
       )}
       <PostalCodeGetter
+        id="postal-code-getter"
         Button={StyleguideButton}
         submitLabel={getSubmitMessage()}
         onSubmit={handleSubmit}

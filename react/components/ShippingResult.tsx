@@ -42,6 +42,7 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
         </div>
         <div className="flex-none">
           <Button
+            id="edit-shipping"
             collapseRight
             variation="tertiary"
             onClick={() => setShowResult(false)}
