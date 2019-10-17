@@ -45,6 +45,7 @@ const ShippingCalculator: FunctionComponent = () => {
       ) : (
         <div className="mt3">
           <Button
+            id="view-delivery-options"
             variation="tertiary"
             collapseLeft
             noUpperCase
