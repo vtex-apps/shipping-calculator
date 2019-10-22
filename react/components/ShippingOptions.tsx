@@ -20,7 +20,9 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
       {options &&
         options.length > 0 &&
         options.map((option, i) => {
-          const optionId = `shipping-option-${option.id}`
+          const optionId = `shipping-option-${option.id
+            .toLowerCase()
+            .replace(/\s+/g, '')}`
 
           return (
             <div key={optionId} className={i + 1 < options.length ? 'mb5' : ''}>
