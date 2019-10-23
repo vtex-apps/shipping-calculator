@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Add `slugify` function.
+
+### Changed
+
+- `id` to lowercase letters and without blank space.
+
 ## [0.3.2] - 2019-10-17
 
 ### Added
