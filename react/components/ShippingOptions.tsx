@@ -1,6 +1,7 @@
 import React, { FunctionComponent, Fragment } from 'react'
 import { Radio } from 'vtex.styleguide'
 import ShippingInfo from './ShippingInfo'
+import { slugify } from '../utils/slugify'
 
 interface CustomProps {
   options: DeliveryOption[]
@@ -20,9 +21,7 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
       {options &&
         options.length > 0 &&
         options.map((option, i) => {
-          const optionId = `shipping-option-${option.id
-            .toLowerCase()
-            .replace(/\s+/g, '')}`
+          const optionId = slugify(`shipping-option-${option.id}`)
 
           return (
             <div key={optionId} className={i + 1 < options.length ? 'mb5' : ''}>

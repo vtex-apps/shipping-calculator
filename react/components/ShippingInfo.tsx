@@ -1,18 +1,21 @@
 import React, { FunctionComponent } from 'react'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { FormattedCurrency } from 'vtex.format-currency'
+import { slugify } from '../utils/slugify'
 
 interface CustomProps {
   option: DeliveryOption
 }
 
 const ShippingInfo: FunctionComponent<CustomProps> = ({ option }) => {
-  const optionId = option.id.toLowerCase().replace(/\s+/g, '')
+  const optionId = slugify(option.id)
 
   return (
     <div className="flex w-100">
       <div className="flex-auto">
-        <div id={optionId} className="mb3">{option.id}</div>
+        <div id={optionId} className="mb3">
+          {option.id}
+        </div>
         <div id={`estimate-${optionId}`} className="c-muted-1">
           <TranslateEstimate shippingEstimate={option.estimate} />
         </div>
