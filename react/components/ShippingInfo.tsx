@@ -12,7 +12,7 @@ const ShippingInfo: FunctionComponent<CustomProps> = ({ option }) => {
   return (
     <div className="flex w-100">
       <div className="flex-auto">
-        <div className="mb3">{option.id}</div>
+        <div id={optionId} className="mb3">{option.id}</div>
         <div id={`estimate-${optionId}`} className="c-muted-1">
           <TranslateEstimate shippingEstimate={option.estimate} />
         </div>
