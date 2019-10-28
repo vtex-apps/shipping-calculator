@@ -6,6 +6,11 @@
   },
 
   "estimate-shipping": {
-    "component": "ShippingCalculator"
+    "component": "ShippingCalculator",
+    "preview": {
+      "type": "box",
+      "height": 30,
+      "width": 200
+    }
   }
 }

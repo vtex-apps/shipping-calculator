@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- `blocks` file in order to pass children components to `Shipping`.
+- `estimate-shipping` interface with `preview` property for skeleton purposes.
+
+### Changed
+
+- Receives the necessary shipping data through props.
+- Add preview skeleton
+
 ## [0.3.4] - 2019-10-29
 
 ### Fixed

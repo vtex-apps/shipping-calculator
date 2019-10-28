@@ -17,6 +17,7 @@ interface Context {
   countries: string[]
   deliveryOptions: DeliveryOption[]
   insertAddress: (address: CheckoutAddress) => void
+  loading: boolean
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
 }
@@ -37,6 +38,7 @@ const Shipping: FunctionComponent<ShippingProps> = ({
   countries,
   deliveryOptions,
   insertAddress,
+  loading,
   selectDeliveryOption,
   selectedAddress,
 }) => {
@@ -46,6 +48,7 @@ const Shipping: FunctionComponent<ShippingProps> = ({
         countries,
         deliveryOptions,
         insertAddress,
+        loading,
         selectDeliveryOption,
         selectedAddress,
       }}
@@ -70,6 +73,7 @@ interface ShippingProps {
   countries: string[]
   deliveryOptions: DeliveryOption[]
   insertAddress: (address: CheckoutAddress) => void
+  loading: boolean
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
 }

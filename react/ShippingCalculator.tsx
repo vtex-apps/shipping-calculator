@@ -1,6 +1,7 @@
 import React, { useState, FunctionComponent } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
+import { Loading } from 'vtex.render-runtime'
 import EstimateShipping from './components/EstimateShipping'
 import { useShipping } from './Shipping'
 
@@ -16,6 +17,7 @@ const ShippingCalculator: FunctionComponent = () => {
     countries,
     deliveryOptions,
     insertAddress,
+    loading,
     selectDeliveryOption,
     selectedAddress,
   } = useShipping()
@@ -23,6 +25,10 @@ const ShippingCalculator: FunctionComponent = () => {
   const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
     selectedAddress && selectedAddress.postalCode ? true : false
   )
+
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <div>
