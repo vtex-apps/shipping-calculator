@@ -45,10 +45,8 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
     const addressWithoutValidation = removeValidation(address)
     const postalCodeValid =
       address && address.postalCode && address.postalCode.valid
-    const geoCoordinatesValid =
-      address && address.geoCoordinates && address.geoCoordinates.valid
 
-    if (postalCodeValid || geoCoordinatesValid) {
+    if (postalCodeValid) {
       insertAddress(addressWithoutValidation)
       setShowResult(true)
     }
