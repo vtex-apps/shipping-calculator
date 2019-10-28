@@ -2,14 +2,9 @@ import React, { useState, FunctionComponent } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 import EstimateShipping from './components/EstimateShipping'
-
-import { useOrderShipping } from 'vtex.order-shipping/OrderShipping'
+import { useShipping } from './Shipping'
 
 defineMessages({
-  delivery: {
-    defaultMessage: 'Delivery',
-    id: 'store/shipping-calculator.delivery',
-  },
   viewDeliveryOptions: {
     defaultMessage: 'View delivery options',
     id: 'store/shipping-calculator.viewDeliveryOptions',
@@ -18,22 +13,19 @@ defineMessages({
 
 const ShippingCalculator: FunctionComponent = () => {
   const {
-    insertAddress,
-    selectedAddress,
-    deliveryOptions,
     countries,
+    deliveryOptions,
+    insertAddress,
     selectDeliveryOption,
-  } = useOrderShipping()
+    selectedAddress,
+  } = useShipping()
 
   const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
     selectedAddress && selectedAddress.postalCode ? true : false
   )
 
   return (
-    <div className="flex flex-column c-on-base">
-      <h5 className="t-heading-5 mt0 mb3">
-        <FormattedMessage id="store/shipping-calculator.delivery" />
-      </h5>
+    <div>
       {showEstimateShipping ? (
         <EstimateShipping
           selectedAddress={selectedAddress}
@@ -57,11 +49,6 @@ const ShippingCalculator: FunctionComponent = () => {
       )}
     </div>
   )
-}
-
-ShippingCalculator.defaultProps = {
-  countries: [],
-  deliveryOptions: [],
 }
 
 export default ShippingCalculator

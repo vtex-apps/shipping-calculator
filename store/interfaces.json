@@ -1,5 +1,11 @@
 {
   "shipping-calculator": {
+    "component": "Shipping",
+    "allowed": ["estimate-shipping"],
+    "composition": "children"
+  },
+
+  "estimate-shipping": {
     "component": "ShippingCalculator"
   }
 }
