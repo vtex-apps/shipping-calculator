@@ -27,7 +27,7 @@ const ShippingContext = createContext<Context | undefined>(undefined)
 export const useShipping = () => {
   const context = useContext(ShippingContext)
   if (context === undefined) {
-    throw new Error('useShipping must be used within a ShippingProvider')
+    throw new Error('useShipping must be used within a Shipping component')
   }
 
   return context
