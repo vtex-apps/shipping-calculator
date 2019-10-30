@@ -1,13 +1,12 @@
 import { render } from '@vtex/test-tools/react'
 import React from 'react'
 
-import { OrderShippingContext } from 'vtex.order-shipping/OrderShipping'
-
+import Shipping from '../Shipping'
 import ShippingCalculator from '../ShippingCalculator'
 
 interface Context {
   countries: string[]
-  selectedAddress: CheckoutAddress
+  selectedAddress: Address
   insertAddress: (address: CheckoutAddress) => void
   deliveryOptions: DeliveryOption[]
   selectDeliveryOption: (option: string) => void
@@ -45,10 +44,23 @@ const contextInfo = {
 
 describe('Shipping', () => {
   const renderComponent = (customProps: Context) => {
+    const {
+      countries,
+      deliveryOptions,
+      insertAddress,
+      selectDeliveryOption,
+      selectedAddress,
+    } = customProps
     const wrapper = render(
-      <OrderShippingContext.Provider value={customProps}>
-        <ShippingCalculator />
-      </OrderShippingContext.Provider>
+      <Shipping
+        children={<ShippingCalculator />}
+        countries={countries}
+        deliveryOptions={deliveryOptions}
+        insertAddress={insertAddress}
+        loading={false}
+        selectDeliveryOption={selectDeliveryOption}
+        selectedAddress={selectedAddress}
+      />
     )
     return wrapper
   }
@@ -70,7 +82,8 @@ describe('Shipping', () => {
 
   it('should show delivery button', () => {
     const { getByText } = renderComponent({
-      selectedAddress: {},
+      ...contextInfo,
+      selectedAddress: { addressId: '', addressType: '' },
     })
     expect(getByText('View delivery options')).toBeTruthy()
   })

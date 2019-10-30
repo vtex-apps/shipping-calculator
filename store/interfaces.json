@@ -1,5 +1,16 @@
 {
   "shipping-calculator": {
-    "component": "ShippingCalculator"
+    "component": "Shipping",
+    "allowed": ["estimate-shipping"],
+    "composition": "children"
+  },
+
+  "estimate-shipping": {
+    "component": "ShippingCalculator",
+    "preview": {
+      "type": "box",
+      "height": 30,
+      "width": 200
+    }
   }
 }

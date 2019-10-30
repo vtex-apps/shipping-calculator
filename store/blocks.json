@@ -1,0 +1,5 @@
+{
+  "shipping-calculator": {
+    "children": ["estimate-shipping"]
+  }
+}
