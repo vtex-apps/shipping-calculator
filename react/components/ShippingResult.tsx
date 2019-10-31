@@ -1,6 +1,6 @@
 import React, { FunctionComponent, Fragment } from 'react'
 import { helpers } from 'vtex.address-form'
-import { Button } from 'vtex.styleguide'
+import { ButtonPlain } from 'vtex.styleguide'
 import ShippingOptions from './ShippingOptions'
 import { FormattedMessage, defineMessages } from 'react-intl'
 const { removeValidation } = helpers
@@ -33,7 +33,7 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
 
   return (
     <Fragment>
-      <div className="mb5 flex items-center">
+      <div className="mb6 flex items-center">
         <div id="postal-code" className="flex-auto">
           <span className="fw5">
             <FormattedMessage id="store/shipping-calculator.deliveryFor" />
@@ -41,14 +41,12 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
           {postalCode}
         </div>
         <div className="flex-none">
-          <Button
+          <ButtonPlain
             id="edit-shipping"
-            collapseRight
-            variation="tertiary"
             onClick={() => setShowResult(false)}
           >
             <FormattedMessage id="store/shipping-calculator.edit" />
-          </Button>
+          </ButtonPlain>
         </div>
       </div>
       <ShippingOptions
