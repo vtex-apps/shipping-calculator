@@ -1,6 +1,6 @@
 import React, { useState, FunctionComponent } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
-import { Button } from 'vtex.styleguide'
+import { ButtonPlain } from 'vtex.styleguide'
 import { Loading } from 'vtex.render-runtime'
 import EstimateShipping from './components/EstimateShipping'
 import { useShipping } from './Shipping'
@@ -41,16 +41,13 @@ const ShippingCalculator: FunctionComponent = () => {
           selectDeliveryOption={selectDeliveryOption}
         />
       ) : (
-        <div className="mt3">
-          <Button
+        <div>
+          <ButtonPlain
             id="view-delivery-options"
-            variation="tertiary"
-            collapseLeft
-            noUpperCase
             onClick={() => setShowEstimateShipping(true)}
           >
             <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />
-          </Button>
+          </ButtonPlain>
         </div>
       )}
     </div>
