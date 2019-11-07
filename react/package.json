@@ -27,7 +27,7 @@
     "@types/react-intl": "^2.3.17",
     "@vtex/address-form": "^3.5.12",
     "@vtex/country-codes": "^1.0.2",
-    "@vtex/styleguide": "^9.91.2",
+    "@vtex/styleguide": "^9.95.0",
     "@vtex/test-tools": "^1.2.0",
     "apollo-client": "^2.5.1",
     "eslint": "^5.16.0",

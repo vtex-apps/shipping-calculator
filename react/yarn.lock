@@ -1228,10 +1228,10 @@
     react-virtualized "^9.19.1"
     vtex-tachyons "^2.6.0"
 
-"@vtex/styleguide@^9.91.2":
-  version "9.91.2"
-  resolved "https://registry.yarnpkg.com/@vtex/styleguide/-/styleguide-9.91.2.tgz#6e906ca8d67a5ef0d3bebc8125ac54416ee86d25"
-  integrity sha512-Z0S/DLY9ARHTPjlsIy6zl8raKmxwVg8TazjO/4oupjKvy9KVrD4mtSbSQoIRnxM1BfP4SuDYyu+lllxIJ5cR1g==
+"@vtex/styleguide@^9.95.0":
+  version "9.95.0"
+  resolved "https://registry.yarnpkg.com/@vtex/styleguide/-/styleguide-9.95.0.tgz#ca4535513957b5ecb19b66b565a6f0f8d8054f27"
+  integrity sha512-vo/cv/nwQDUaYedzZzvHKq5X0WPn4dYNk8oKV8eO82GcBOBVcHBpb8TQSOZTwjkSvUL9XW8/62hP2G0snH+vWQ==
   dependencies:
     autoprefixer "^9.6.1"
     case-sensitive-paths-webpack-plugin "^2.2.0"
