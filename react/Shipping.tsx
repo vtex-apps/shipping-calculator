@@ -54,7 +54,7 @@ const Shipping: FunctionComponent<ShippingProps> = ({
       }}
     >
       <div className="flex flex-column c-on-base">
-        <h5 className="t-heading-5 mt0 mb3">
+        <h5 className="t-heading-5 mt0 mb5">
           <FormattedMessage id="store/shipping-calculator.delivery" />
         </h5>
         {children}
