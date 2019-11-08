@@ -22,13 +22,15 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
         options.length > 0 &&
         options.map((option, i) => {
           const optionId = slugify(`shipping-option-${option.id}`)
+          const isLast = i + 1 >= options.length
 
           return (
-            <div key={optionId} className={i + 1 < options.length ? 'mb5' : ''}>
+            <div key={optionId} className={isLast ? '' : 'mb5'}>
               <Radio
                 key={optionId}
                 name={optionId}
                 id={optionId}
+                isLast={isLast}
                 checked={option.isSelected}
                 onChange={handleChange}
                 value={option.id}
