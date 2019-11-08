@@ -10,7 +10,10 @@
     "preview": {
       "type": "box",
       "height": 30,
-      "width": 200
+      "width": 200,
+      "options": {
+        "padding": 0
+      }
     }
   }
 }

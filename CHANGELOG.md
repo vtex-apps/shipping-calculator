@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Store `interfaces` `preview` structure.
+
 ## [0.5.2] - 2019-11-08
 
 ### Fixed
