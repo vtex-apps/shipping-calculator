@@ -33,8 +33,10 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
     )
   )
 
+  const [loading, setLoading] = useState<boolean>(false)
+
   const [showResult, setShowResult] = useState<boolean>(
-    selectedAddress && selectedAddress.postalCode ? true : false
+    deliveryOptions.length > 0 && !!selectedAddress.postalCode
   )
 
   const handleAddressChange = (address: AddressWithValidation) => {
@@ -48,7 +50,7 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
 
     if (postalCodeValid) {
       insertAddress(addressWithoutValidation)
-      setShowResult(true)
+      setLoading(true)
     }
   }
 
@@ -71,10 +73,8 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
             selectDeliveryOption={selectDeliveryOption}
           />
         ) : (
-          <div>
-            <PostalCode handleSubmit={handleSubmit} countries={countries} />
-          </div>
-        )}
+            <PostalCode loading={loading} handleSubmit={handleSubmit} countries={countries} />
+          )}
       </AddressContainer>
     </AddressRules>
   )
