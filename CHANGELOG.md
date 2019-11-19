@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Showing shipping estimate if has address postalCode
+- Loading estimate result and showing in the right moment
 
 ## [0.5.3] - 2019-11-08
 
