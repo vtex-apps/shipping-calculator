@@ -22,8 +22,10 @@ const ShippingCalculator: FunctionComponent = () => {
     selectedAddress,
   } = useShipping()
 
+  const shouldShowShippingEstimate = selectedAddress && !!selectedAddress.postalCode
+
   const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
-    selectedAddress && selectedAddress.postalCode ? true : false
+    shouldShowShippingEstimate
   )
 
   if (loading) {
@@ -32,7 +34,7 @@ const ShippingCalculator: FunctionComponent = () => {
 
   return (
     <div>
-      {showEstimateShipping ? (
+      {showEstimateShipping || shouldShowShippingEstimate ? (
         <EstimateShipping
           selectedAddress={selectedAddress}
           deliveryOptions={deliveryOptions}
@@ -41,15 +43,15 @@ const ShippingCalculator: FunctionComponent = () => {
           selectDeliveryOption={selectDeliveryOption}
         />
       ) : (
-        <div>
-          <ButtonPlain
-            id="view-delivery-options"
-            onClick={() => setShowEstimateShipping(true)}
-          >
-            <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />
-          </ButtonPlain>
-        </div>
-      )}
+          <div>
+            <ButtonPlain
+              id="view-delivery-options"
+              onClick={() => setShowEstimateShipping(true)}
+            >
+              <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />
+            </ButtonPlain>
+          </div>
+        )}
     </div>
   )
 }
