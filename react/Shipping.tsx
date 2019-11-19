@@ -13,10 +13,16 @@ defineMessages({
   },
 })
 
+
+interface InsertAddressResult {
+  success: boolean
+  orderForm: any
+}
+
 interface Context {
   countries: string[]
   deliveryOptions: DeliveryOption[]
-  insertAddress: (address: CheckoutAddress) => void
+  insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   loading: boolean
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
@@ -72,7 +78,7 @@ interface ShippingProps {
   children: ReactNode
   countries: string[]
   deliveryOptions: DeliveryOption[]
-  insertAddress: (address: CheckoutAddress) => void
+  insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   loading: boolean
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address

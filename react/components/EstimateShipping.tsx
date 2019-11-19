@@ -7,9 +7,13 @@ import { newAddress } from '../utils/address'
 
 const { AddressContainer, AddressRules, StyleguideInput } = components
 const { addValidation, removeValidation } = helpers
+interface InsertAddressResult {
+  success: boolean
+  orderForm: any
+}
 
 interface CustomProps {
-  insertAddress: (address: CheckoutAddress) => void
+  insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   selectedAddress: Address
   deliveryOptions: DeliveryOption[]
   countries: string[]
@@ -49,7 +53,12 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
       address && address.postalCode && address.postalCode.valid
 
     if (postalCodeValid) {
-      insertAddress(addressWithoutValidation)
+      insertAddress(addressWithoutValidation).then((result: InsertAddressResult) => {
+        if (result.success) {
+          setShowResult(true)
+        }
+        setLoading(false)
+      })
       setLoading(true)
     }
   }
