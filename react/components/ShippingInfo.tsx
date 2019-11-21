@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
-import { FormattedCurrency } from 'vtex.format-currency'
+import { FormattedPrice } from 'vtex.formatted-price'
 import { slugify } from '../utils/slugify'
 
 interface CustomProps {
@@ -21,7 +21,7 @@ const ShippingInfo: FunctionComponent<CustomProps> = ({ option }) => {
         </div>
       </div>
       <div id={`price-${optionId}`} className="flex-none">
-        <FormattedCurrency value={option.price / 100} />
+        <FormattedPrice value={option.price / 100} />
       </div>
     </div>
   )

@@ -16,7 +16,8 @@ defineMessages({
 })
 
 interface CustomProps {
-  countries: string[]
+  countries: string[],
+  loading: boolean,
   handleSubmit: () => void
 }
 
@@ -25,6 +26,7 @@ type Props = CustomProps & InjectedIntlProps
 const PostalCode: FunctionComponent<Props> = ({
   intl,
   countries,
+  loading,
   handleSubmit,
 }) => {
   const addCountryLabel = (countries: string[]) => {
@@ -51,6 +53,7 @@ const PostalCode: FunctionComponent<Props> = ({
         Button={StyleguideButton}
         submitLabel={getSubmitMessage()}
         onSubmit={handleSubmit}
+        loading={loading}
         autoFocus
       />
     </Fragment>

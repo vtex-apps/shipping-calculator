@@ -7,9 +7,13 @@ import { newAddress } from '../utils/address'
 
 const { AddressContainer, AddressRules, StyleguideInput } = components
 const { addValidation, removeValidation } = helpers
+interface InsertAddressResult {
+  success: boolean
+  orderForm: any
+}
 
 interface CustomProps {
-  insertAddress: (address: CheckoutAddress) => void
+  insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   selectedAddress: Address
   deliveryOptions: DeliveryOption[]
   countries: string[]
@@ -33,8 +37,10 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
     )
   )
 
+  const [loading, setLoading] = useState<boolean>(false)
+
   const [showResult, setShowResult] = useState<boolean>(
-    selectedAddress && selectedAddress.postalCode ? true : false
+    deliveryOptions.length > 0 && !!selectedAddress.postalCode
   )
 
   const handleAddressChange = (address: AddressWithValidation) => {
@@ -47,8 +53,13 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
       address && address.postalCode && address.postalCode.valid
 
     if (postalCodeValid) {
-      insertAddress(addressWithoutValidation)
-      setShowResult(true)
+      insertAddress(addressWithoutValidation).then((result: InsertAddressResult) => {
+        if (result.success) {
+          setShowResult(true)
+        }
+        setLoading(false)
+      })
+      setLoading(true)
     }
   }
 
@@ -71,10 +82,8 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
             selectDeliveryOption={selectDeliveryOption}
           />
         ) : (
-          <div>
-            <PostalCode handleSubmit={handleSubmit} countries={countries} />
-          </div>
-        )}
+            <PostalCode loading={loading} handleSubmit={handleSubmit} countries={countries} />
+          )}
       </AddressContainer>
     </AddressRules>
   )

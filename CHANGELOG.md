@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- Showing shipping estimate if has address postalCode;
+- Loading estimate result and showing in the right moment.
+
+### Changed
+
+- ShippingInfo price with `FormattedPrice` component.
+
 ## [0.5.3] - 2019-11-08
 
 ### Changed
