@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "shipping-calculator",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "title": "IO Base Component",
   "description": "IO Base component",
   "defaultLocale": "pt-BR",
