@@ -1,0 +1,13 @@
+{
+  "definitions": {
+    "ShippingCalculator": {
+      "properties": {
+        "title": {
+          "title": "admin/editor.shipping-calculator.title",
+          "$ref": "app:vtex.native-types#/definitions/text",
+          "default": "store/shipping-calculator.delivery"
+        }
+      }
+    }
+  }
+}

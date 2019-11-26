@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- `schema` to `Shipping` component so it appears in Site Editor.
+
 ## [0.5.4] - 2019-11-21
 
 ### Fixed
