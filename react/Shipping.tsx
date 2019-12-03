@@ -1,18 +1,20 @@
-import React, {
-  createContext,
-  useContext,
-  FunctionComponent,
-  ReactNode,
-} from 'react'
+import React, { createContext, useContext, ReactNode } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 
-defineMessages({
+const messages = defineMessages({
   delivery: {
     defaultMessage: 'Delivery',
     id: 'store/shipping-calculator.delivery',
   },
+  label: {
+    defaultMessage: '',
+    id: 'admin/editor.shipping-calculator.label',
+  },
+  title: {
+    defaultMessage: '',
+    id: 'admin/editor.shipping-calculator.title',
+  },
 })
-
 
 interface InsertAddressResult {
   success: boolean
@@ -39,7 +41,7 @@ export const useShipping = () => {
   return context
 }
 
-const Shipping: FunctionComponent<ShippingProps> = ({
+const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
   children,
   countries,
   deliveryOptions,
@@ -47,6 +49,7 @@ const Shipping: FunctionComponent<ShippingProps> = ({
   loading,
   selectDeliveryOption,
   selectedAddress,
+  title,
 }) => {
   return (
     <ShippingContext.Provider
@@ -61,7 +64,7 @@ const Shipping: FunctionComponent<ShippingProps> = ({
     >
       <div className="flex flex-column c-on-base">
         <h5 className="t-heading-5 mt0 mb5">
-          <FormattedMessage id="store/shipping-calculator.delivery" />
+          <FormattedMessage id={title} />
         </h5>
         {children}
       </div>
@@ -72,6 +75,7 @@ const Shipping: FunctionComponent<ShippingProps> = ({
 Shipping.defaultProps = {
   countries: [],
   deliveryOptions: [],
+  title: messages.delivery.id,
 }
 
 interface ShippingProps {
@@ -82,6 +86,11 @@ interface ShippingProps {
   loading: boolean
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
+  title: string
+}
+
+Shipping.schema = {
+  title: messages.label.id,
 }
 
 export default Shipping

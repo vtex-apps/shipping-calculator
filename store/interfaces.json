@@ -2,9 +2,11 @@
   "shipping-calculator": {
     "component": "Shipping",
     "allowed": ["estimate-shipping"],
-    "composition": "children"
+    "composition": "children",
+    "content": {
+      "$ref": "#/definitions/ShippingCalculator"
+    }
   },
-
   "estimate-shipping": {
     "component": "ShippingCalculator",
     "preview": {

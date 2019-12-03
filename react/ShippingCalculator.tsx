@@ -5,7 +5,7 @@ import { Loading } from 'vtex.render-runtime'
 import EstimateShipping from './components/EstimateShipping'
 import { useShipping } from './Shipping'
 
-defineMessages({
+const messages = defineMessages({
   viewDeliveryOptions: {
     defaultMessage: 'View delivery options',
     id: 'store/shipping-calculator.viewDeliveryOptions',
@@ -22,7 +22,8 @@ const ShippingCalculator: FunctionComponent = () => {
     selectedAddress,
   } = useShipping()
 
-  const shouldShowShippingEstimate = selectedAddress && !!selectedAddress.postalCode
+  const shouldShowShippingEstimate =
+    selectedAddress && !!selectedAddress.postalCode
 
   const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
     shouldShowShippingEstimate
@@ -43,15 +44,15 @@ const ShippingCalculator: FunctionComponent = () => {
           selectDeliveryOption={selectDeliveryOption}
         />
       ) : (
-          <div>
-            <ButtonPlain
-              id="view-delivery-options"
-              onClick={() => setShowEstimateShipping(true)}
-            >
-              <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />
-            </ButtonPlain>
-          </div>
-        )}
+        <div>
+          <ButtonPlain
+            id="view-delivery-options"
+            onClick={() => setShowEstimateShipping(true)}
+          >
+            <FormattedMessage id={messages.viewDeliveryOptions.id} />
+          </ButtonPlain>
+        </div>
+      )}
     </div>
   )
 }
