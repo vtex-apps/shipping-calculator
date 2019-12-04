@@ -13,6 +13,7 @@ interface InsertAddressResult {
 }
 
 interface CustomProps {
+  canEditData: boolean
   insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   selectedAddress: Address
   deliveryOptions: DeliveryOption[]
@@ -21,6 +22,7 @@ interface CustomProps {
 }
 
 const EstimateShipping: FunctionComponent<CustomProps> = ({
+  canEditData,
   insertAddress,
   selectedAddress,
   deliveryOptions,
@@ -40,7 +42,7 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
   const [loading, setLoading] = useState<boolean>(false)
 
   const [showResult, setShowResult] = useState<boolean>(
-    deliveryOptions.length > 0 && !!selectedAddress.postalCode
+    !!selectedAddress.postalCode
   )
 
   const handleAddressChange = (address: AddressWithValidation) => {
@@ -53,12 +55,14 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
       address && address.postalCode && address.postalCode.valid
 
     if (postalCodeValid) {
-      insertAddress(addressWithoutValidation).then((result: InsertAddressResult) => {
-        if (result.success) {
-          setShowResult(true)
+      insertAddress(addressWithoutValidation).then(
+        (result: InsertAddressResult) => {
+          if (result.success) {
+            setShowResult(true)
+          }
+          setLoading(false)
         }
-        setLoading(false)
-      })
+      )
       setLoading(true)
     }
   }
@@ -76,14 +80,19 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
       >
         {showResult ? (
           <ShippingResult
+            canEditData={canEditData}
             address={address}
             options={deliveryOptions}
             setShowResult={setShowResult}
             selectDeliveryOption={selectDeliveryOption}
           />
         ) : (
-            <PostalCode loading={loading} handleSubmit={handleSubmit} countries={countries} />
-          )}
+          <PostalCode
+            loading={loading}
+            handleSubmit={handleSubmit}
+            countries={countries}
+          />
+        )}
       </AddressContainer>
     </AddressRules>
   )

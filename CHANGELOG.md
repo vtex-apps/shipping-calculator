@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- `shipping-calculator` now receives `canEditData` prop in order to determine whether shipping data could be edited or not.
+
 ## [0.6.0] - 2019-12-03
 
 ### Added

@@ -18,6 +18,7 @@ defineMessages({
 
 interface CustomProps {
   address: AddressWithValidation
+  canEditData: boolean
   options: DeliveryOption[]
   setShowResult: (showResult: boolean) => void
   selectDeliveryOption: (option: string) => void
@@ -25,6 +26,7 @@ interface CustomProps {
 
 const ShippingResult: FunctionComponent<CustomProps> = ({
   address,
+  canEditData,
   options,
   setShowResult,
   selectDeliveryOption,
@@ -40,14 +42,16 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
           </span>{' '}
           {postalCode}
         </div>
-        <div className="flex-none">
-          <ButtonPlain
-            id="edit-shipping"
-            onClick={() => setShowResult(false)}
-          >
-            <FormattedMessage id="store/shipping-calculator.edit" />
-          </ButtonPlain>
-        </div>
+        {canEditData && (
+          <div className="flex-none">
+            <ButtonPlain
+              id="edit-shipping"
+              onClick={() => setShowResult(false)}
+            >
+              <FormattedMessage id="store/shipping-calculator.edit" />
+            </ButtonPlain>
+          </div>
+        )}
       </div>
       <ShippingOptions
         options={options}
