@@ -42,7 +42,7 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
   const [loading, setLoading] = useState<boolean>(false)
 
   const [showResult, setShowResult] = useState<boolean>(
-    !!selectedAddress.postalCode
+    selectedAddress && !!selectedAddress.postalCode
   )
 
   const handleAddressChange = (address: AddressWithValidation) => {
