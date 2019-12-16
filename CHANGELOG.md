@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Warning to when there are unavailable products.
-- Warning to when all the products are unavailable.
+- Warning when there are unavailable products.
+- Warning when all the products are unavailable.
 
 ## [0.7.0] - 2019-12-10
 
