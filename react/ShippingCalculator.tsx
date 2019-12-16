@@ -19,6 +19,7 @@ const ShippingCalculator: FunctionComponent = () => {
     deliveryOptions,
     insertAddress,
     loading,
+    numberOfUnavailableItems,
     selectDeliveryOption,
     selectedAddress,
   } = useShipping()
@@ -44,6 +45,7 @@ const ShippingCalculator: FunctionComponent = () => {
           countries={countries}
           insertAddress={insertAddress}
           selectDeliveryOption={selectDeliveryOption}
+          numberOfUnavailableItems={numberOfUnavailableItems}
         />
       ) : (
         <div>

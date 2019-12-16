@@ -27,6 +27,7 @@ interface Context {
   deliveryOptions: DeliveryOption[]
   insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   loading: boolean
+  numberOfUnavailableItems: number
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
 }
@@ -49,6 +50,7 @@ const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
   deliveryOptions,
   insertAddress,
   loading,
+  numberOfUnavailableItems,
   selectDeliveryOption,
   selectedAddress,
   title,
@@ -61,6 +63,7 @@ const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
         deliveryOptions,
         insertAddress,
         loading,
+        numberOfUnavailableItems,
         selectDeliveryOption,
         selectedAddress,
       }}
@@ -89,6 +92,7 @@ interface ShippingProps {
   deliveryOptions: DeliveryOption[]
   insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   loading: boolean
+  numberOfUnavailableItems: number
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
   title: string

@@ -6,11 +6,13 @@ import { slugify } from '../utils/slugify'
 import { FormattedMessage } from 'react-intl'
 
 interface CustomProps {
+  numberOfUnavailableItems: number
   options: DeliveryOption[]
   selectDeliveryOption: (option: string) => void
 }
 
 const ShippingOptions: FunctionComponent<CustomProps> = ({
+  numberOfUnavailableItems,
   options,
   selectDeliveryOption,
 }) => {
@@ -20,9 +22,12 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
 
   return (
     <Fragment>
-      <DeliveryOptionsAvailability options={options} />
+      <DeliveryOptionsAvailability
+        options={options}
+        numberOfUnavailableItems={numberOfUnavailableItems}
+      />
       <div className="">
-        <FormattedMessage id="store/shipping-calculator.OptionsForRemainingProducts" />
+        <FormattedMessage id="store/shipping-calculator.optionsForRemainingProducts" />
       </div>
       {options &&
         options.length > 0 &&

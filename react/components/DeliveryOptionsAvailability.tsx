@@ -4,17 +4,25 @@ import { Alert } from 'vtex.styleguide'
 
 interface Props {
   options: DeliveryOption[]
+  numberOfUnavailableItems: number
 }
 
-const DeliveryOptionsAvailability: FunctionComponent<Props> = ({ options }) => {
+const DeliveryOptionsAvailability: FunctionComponent<Props> = ({
+  options,
+  numberOfUnavailableItems,
+}) => {
   return (
     <Fragment>
       {!options.length && (
-        // <div className={'bg-warning--faded br2 t-small pa4'}>
-        //   <FormattedMessage id="store/shipping-calculator.AllProductsUnavailable" />
-        // </div>
         <Alert type="warning">
-          <FormattedMessage id="store/shipping-calculator.AllProductsUnavailable" />
+          {numberOfUnavailableItems ? (
+            <FormattedMessage
+              id="store/shipping-calculator.unavailableProducts"
+              values={{ numberOfUnavailableItems }}
+            />
+          ) : (
+            <FormattedMessage id="store/shipping-calculator.allProductsUnavailable" />
+          )}
         </Alert>
       )}
     </Fragment>
