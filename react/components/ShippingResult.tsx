@@ -18,21 +18,21 @@ defineMessages({
 
 interface CustomProps {
   address: AddressWithValidation
-  allItemsUnavailable: boolean
   canEditData: boolean
   options: DeliveryOption[]
   setShowResult: (showResult: boolean) => void
   selectDeliveryOption: (option: string) => void
+  numberOfItems: number
   numberOfUnavailableItems: number
 }
 
 const ShippingResult: FunctionComponent<CustomProps> = ({
   address,
-  allItemsUnavailable,
   canEditData,
   options,
   setShowResult,
   selectDeliveryOption,
+  numberOfItems,
   numberOfUnavailableItems,
 }) => {
   const { postalCode } = removeValidation(address)
@@ -58,7 +58,7 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
         )}
       </div>
       <ShippingOptions
-        allItemsUnavailable={allItemsUnavailable}
+        numberOfItems={numberOfItems}
         numberOfUnavailableItems={numberOfUnavailableItems}
         options={options}
         selectDeliveryOption={selectDeliveryOption}

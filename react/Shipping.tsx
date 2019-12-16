@@ -22,12 +22,12 @@ interface InsertAddressResult {
 }
 
 interface Context {
-  allItemsUnavailable: boolean
   canEditData: boolean
   countries: string[]
   deliveryOptions: DeliveryOption[]
   insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   loading: boolean
+  numberOfItems: number
   numberOfUnavailableItems: number
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
@@ -45,13 +45,13 @@ export const useShipping = () => {
 }
 
 const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
-  allItemsUnavailable,
   children,
   canEditData,
   countries,
   deliveryOptions,
   insertAddress,
   loading,
+  numberOfItems,
   numberOfUnavailableItems,
   selectDeliveryOption,
   selectedAddress,
@@ -60,12 +60,12 @@ const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
   return (
     <ShippingContext.Provider
       value={{
-        allItemsUnavailable,
         canEditData,
         countries,
         deliveryOptions,
         insertAddress,
         loading,
+        numberOfItems,
         numberOfUnavailableItems,
         selectDeliveryOption,
         selectedAddress,
@@ -89,13 +89,13 @@ Shipping.defaultProps = {
 }
 
 interface ShippingProps {
-  allItemsUnavailable: boolean
   children: ReactNode
   canEditData: boolean
   countries: string[]
   deliveryOptions: DeliveryOption[]
   insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   loading: boolean
+  numberOfItems: number
   numberOfUnavailableItems: number
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address

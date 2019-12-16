@@ -3,19 +3,18 @@ import { FormattedMessage } from 'react-intl'
 import { Alert } from 'vtex.styleguide'
 
 interface Props {
-  allItemsUnavailable: boolean
-  options: DeliveryOption[]
+  numberOfItems: number
   numberOfUnavailableItems: number
 }
 
 const DeliveryOptionsAvailability: FunctionComponent<Props> = ({
-  allItemsUnavailable,
-  options,
+  numberOfItems,
   numberOfUnavailableItems,
 }) => {
+  const allItemsUnavailable = numberOfUnavailableItems === numberOfItems
   return (
     <Fragment>
-      {!options.length && (
+      {numberOfUnavailableItems ? (
         <Alert type="warning">
           {allItemsUnavailable ? (
             <FormattedMessage id="store/shipping-calculator.allItemsUnavailable" />
@@ -26,7 +25,7 @@ const DeliveryOptionsAvailability: FunctionComponent<Props> = ({
             />
           )}
         </Alert>
-      )}
+      ) : null}
     </Fragment>
   )
 }
