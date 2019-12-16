@@ -4,7 +4,7 @@
   "store/shipping-calculator.edit": "edit",
   "store/shipping-calculator.estimate": "estimate",
   "store/shipping-calculator.viewDeliveryOptions": "View delivery options",
-  "store/shipping-calculator.allItemsUnavailable": "All products can't be delivered to this address.",
+  "store/shipping-calculator.allItemsUnavailable": "All the products can't be delivered to this address.",
   "store/shipping-calculator.unavailableItems": "{numberOfUnavailableItems, plural, one {# product that can't be delivered to this address is highlighted} other {# products that can't be delivered to this address are highlighted}}.",
   "store/shipping-calculator.optionsForRemainingProducts": "{numberOfOptions, plural, one {Option} other {Options}} for remaining {numberOfItems, plural, one {product} other {products}}",
   "admin/editor.shipping-calculator.label": "Delivery",
