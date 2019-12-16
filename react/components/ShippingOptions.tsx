@@ -13,8 +13,8 @@ interface CustomProps {
 }
 
 const ShippingOptions: FunctionComponent<CustomProps> = ({
-  numberOfItems = 0,
-  numberOfUnavailableItems = 0,
+  numberOfItems,
+  numberOfUnavailableItems,
   options,
   selectDeliveryOption,
 }) => {
