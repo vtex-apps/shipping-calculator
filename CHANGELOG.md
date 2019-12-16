@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Warning to when there are unavailable products.
+- Warning to when all the products are unavailable.
+
 ## [0.7.0] - 2019-12-10
 
 ### Changed
