@@ -4,6 +4,8 @@
   "store/shipping-calculator.edit": "alterar",
   "store/shipping-calculator.estimate": "calcular",
   "store/shipping-calculator.viewDeliveryOptions": "Ver opções de entrega",
+  "store/shipping-calculator.AllProductsUnavailable": "Nenhum produto pode ser entregue nesse endereço.",
+  "store/shipping-calculator.OptionsForRemainingProducts": "Option for remaining product",
   "admin/editor.shipping-calculator.label": "Entrega",
   "admin/editor.shipping-calculator.title": "Título"
 }

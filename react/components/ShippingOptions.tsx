@@ -1,7 +1,9 @@
 import React, { FunctionComponent, Fragment } from 'react'
 import { Radio } from 'vtex.styleguide'
 import ShippingInfo from './ShippingInfo'
+import DeliveryOptionsAvailability from './DeliveryOptionsAvailability'
 import { slugify } from '../utils/slugify'
+import { FormattedMessage } from 'react-intl'
 
 interface CustomProps {
   options: DeliveryOption[]
@@ -18,6 +20,10 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
 
   return (
     <Fragment>
+      <DeliveryOptionsAvailability options={options} />
+      <div className="">
+        <FormattedMessage id="store/shipping-calculator.OptionsForRemainingProducts" />
+      </div>
       {options &&
         options.length > 0 &&
         options.map((option, i) => {
