@@ -14,7 +14,7 @@ const DeliveryOptionsAvailability: FunctionComponent<Props> = ({
   const allItemsUnavailable = numberOfUnavailableItems === numberOfItems
   return (
     <Fragment>
-      {numberOfUnavailableItems ? (
+      {numberOfUnavailableItems > 0 && (
         <Alert type="warning">
           {allItemsUnavailable ? (
             <FormattedMessage id="store/shipping-calculator.allItemsUnavailable" />
@@ -25,7 +25,7 @@ const DeliveryOptionsAvailability: FunctionComponent<Props> = ({
             />
           )}
         </Alert>
-      ) : null}
+      )}
     </Fragment>
   )
 }
