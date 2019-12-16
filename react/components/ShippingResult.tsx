@@ -18,6 +18,7 @@ defineMessages({
 
 interface CustomProps {
   address: AddressWithValidation
+  allItemsUnavailable: boolean
   canEditData: boolean
   options: DeliveryOption[]
   setShowResult: (showResult: boolean) => void
@@ -27,6 +28,7 @@ interface CustomProps {
 
 const ShippingResult: FunctionComponent<CustomProps> = ({
   address,
+  allItemsUnavailable,
   canEditData,
   options,
   setShowResult,
@@ -56,6 +58,7 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
         )}
       </div>
       <ShippingOptions
+        allItemsUnavailable={allItemsUnavailable}
         numberOfUnavailableItems={numberOfUnavailableItems}
         options={options}
         selectDeliveryOption={selectDeliveryOption}

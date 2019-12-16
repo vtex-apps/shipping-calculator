@@ -14,6 +14,7 @@ const messages = defineMessages({
 
 const ShippingCalculator: FunctionComponent = () => {
   const {
+    allItemsUnavailable,
     canEditData,
     countries,
     deliveryOptions,
@@ -46,6 +47,7 @@ const ShippingCalculator: FunctionComponent = () => {
           insertAddress={insertAddress}
           selectDeliveryOption={selectDeliveryOption}
           numberOfUnavailableItems={numberOfUnavailableItems}
+          allItemsUnavailable={allItemsUnavailable}
         />
       ) : (
         <div>

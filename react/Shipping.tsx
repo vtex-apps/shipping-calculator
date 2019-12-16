@@ -22,6 +22,7 @@ interface InsertAddressResult {
 }
 
 interface Context {
+  allItemsUnavailable: boolean
   canEditData: boolean
   countries: string[]
   deliveryOptions: DeliveryOption[]
@@ -44,6 +45,7 @@ export const useShipping = () => {
 }
 
 const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
+  allItemsUnavailable,
   children,
   canEditData,
   countries,
@@ -58,6 +60,7 @@ const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
   return (
     <ShippingContext.Provider
       value={{
+        allItemsUnavailable,
         canEditData,
         countries,
         deliveryOptions,
@@ -86,6 +89,7 @@ Shipping.defaultProps = {
 }
 
 interface ShippingProps {
+  allItemsUnavailable: boolean
   children: ReactNode
   canEditData: boolean
   countries: string[]

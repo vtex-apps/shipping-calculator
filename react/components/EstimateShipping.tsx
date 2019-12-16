@@ -13,6 +13,7 @@ interface InsertAddressResult {
 }
 
 interface CustomProps {
+  allItemsUnavailable: boolean
   canEditData: boolean
   insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   selectedAddress: Address
@@ -23,6 +24,7 @@ interface CustomProps {
 }
 
 const EstimateShipping: FunctionComponent<CustomProps> = ({
+  allItemsUnavailable,
   canEditData,
   insertAddress,
   selectedAddress,
@@ -82,6 +84,7 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
       >
         {showResult ? (
           <ShippingResult
+            allItemsUnavailable={allItemsUnavailable}
             canEditData={canEditData}
             address={address}
             options={deliveryOptions}
