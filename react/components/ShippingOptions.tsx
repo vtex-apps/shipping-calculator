@@ -22,13 +22,15 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
     selectDeliveryOption(event.currentTarget.value)
   }
 
+  const allItemsUnavailable = numberOfUnavailableItems === numberOfItems
+
   return (
     <Fragment>
       <DeliveryOptionsAvailability
         numberOfItems={numberOfItems}
         numberOfUnavailableItems={numberOfUnavailableItems}
       />
-      {numberOfUnavailableItems > 0 && (
+      {numberOfUnavailableItems > 0 && !allItemsUnavailable && (
         <div className="fw5 mt5 mb5">
           <FormattedMessage
             id="store/shipping-calculator.optionsForRemainingProducts"
