@@ -22,6 +22,8 @@ interface CustomProps {
   options: DeliveryOption[]
   setShowResult: (showResult: boolean) => void
   selectDeliveryOption: (option: string) => void
+  numberOfItems: number
+  numberOfUnavailableItems: number
 }
 
 const ShippingResult: FunctionComponent<CustomProps> = ({
@@ -30,6 +32,8 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
   options,
   setShowResult,
   selectDeliveryOption,
+  numberOfItems,
+  numberOfUnavailableItems,
 }) => {
   const { postalCode } = removeValidation(address)
 
@@ -54,6 +58,8 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
         )}
       </div>
       <ShippingOptions
+        numberOfItems={numberOfItems}
+        numberOfUnavailableItems={numberOfUnavailableItems}
         options={options}
         selectDeliveryOption={selectDeliveryOption}
       />
