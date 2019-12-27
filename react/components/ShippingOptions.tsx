@@ -31,7 +31,7 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
         numberOfUnavailableItems={numberOfUnavailableItems}
       />
       {numberOfUnavailableItems > 0 && !allItemsUnavailable && (
-        <div className="fw5 mt5 mb5">
+        <div className="fw5 mt6 mb6">
           <FormattedMessage
             id="store/shipping-calculator.optionsForRemainingProducts"
             values={{

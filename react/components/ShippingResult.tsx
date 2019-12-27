@@ -39,7 +39,7 @@ const ShippingResult: FunctionComponent<CustomProps> = ({
 
   return (
     <Fragment>
-      <div className="mb6 flex items-center">
+      <div className="mb4 flex items-center">
         <div id="postal-code" className="flex-auto">
           <span className="fw5">
             <FormattedMessage id="store/shipping-calculator.deliveryFor" />
