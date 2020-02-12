@@ -1,8 +1,9 @@
 import React, { useState, FunctionComponent } from 'react'
-import PostalCode from './PostalCode'
-import ShippingResult from './ShippingResult'
 import { useRuntime } from 'vtex.render-runtime'
 import { components, helpers } from 'vtex.address-form'
+
+import PostalCode from './PostalCode'
+import ShippingResult from './ShippingResult'
 import { newAddress } from '../utils/address'
 
 const { AddressContainer, AddressRules, StyleguideInput } = components
@@ -49,26 +50,27 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
     selectedAddress && !!selectedAddress.postalCode
   )
 
-  const handleAddressChange = (address: AddressWithValidation) => {
-    setAddress(address)
+  const handleAddressChange = (updatedAddress: AddressWithValidation) => {
+    setAddress(updatedAddress)
   }
 
   const handleSubmit = () => {
     const addressWithoutValidation = removeValidation(address)
-    const postalCodeValid =
-      address && address.postalCode && address.postalCode.valid
+    const postalCodeValid = address?.postalCode?.valid
 
-    if (postalCodeValid) {
-      insertAddress(addressWithoutValidation).then(
-        (result: InsertAddressResult) => {
-          if (result.success) {
-            setShowResult(true)
-          }
-          setLoading(false)
-        }
-      )
-      setLoading(true)
+    if (!postalCodeValid) {
+      return
     }
+
+    insertAddress(addressWithoutValidation).then(
+      (result: InsertAddressResult) => {
+        if (result.success) {
+          setShowResult(true)
+        }
+        setLoading(false)
+      }
+    )
+    setLoading(true)
   }
 
   return (

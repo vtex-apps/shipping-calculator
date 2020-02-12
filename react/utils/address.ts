@@ -2,19 +2,19 @@ import getGGUID from './gguid'
 
 export function newAddress(address?: NewAddress) {
   return {
-    addressId: (address && address.addressId) || getGGUID(),
-    addressType: (address && address.addressType) || 'residential',
-    city: (address && address.city) || '',
-    complement: (address && address.complement) || '',
-    country: (address && address.country) || '',
-    geoCoordinates: (address && address.geoCoordinates) || [],
-    neighborhood: (address && address.neighborhood) || '',
-    number: (address && address.number) || '',
-    postalCode: (address && address.postalCode) || '',
-    receiverName: (address && address.receiverName) || '',
-    reference: (address && address.reference) || '',
-    state: (address && address.state) || '',
-    street: (address && address.street) || '',
-    addressQuery: (address && address.addressQuery) || '',
+    addressId: address?.addressId ?? getGGUID(),
+    addressType: address?.addressType ?? 'residential',
+    city: address?.city ?? '',
+    complement: address?.complement ?? '',
+    country: address?.country ?? '',
+    geoCoordinates: address?.geoCoordinates ?? [],
+    neighborhood: address?.neighborhood ?? '',
+    number: address?.number ?? '',
+    postalCode: address?.postalCode ?? '',
+    receiverName: address?.receiverName ?? '',
+    reference: address?.reference ?? '',
+    state: address?.state ?? '',
+    street: address?.street ?? '',
+    addressQuery: address?.addressQuery ?? '',
   }
 }

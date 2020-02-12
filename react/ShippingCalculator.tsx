@@ -2,6 +2,7 @@ import React, { useState, FunctionComponent } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { ButtonPlain } from 'vtex.styleguide'
 import { Loading } from 'vtex.render-runtime'
+
 import EstimateShipping from './components/EstimateShipping'
 import { useShipping } from './Shipping'
 

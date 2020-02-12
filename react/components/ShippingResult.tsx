@@ -1,8 +1,10 @@
 import React, { FunctionComponent, Fragment } from 'react'
 import { helpers } from 'vtex.address-form'
 import { ButtonPlain } from 'vtex.styleguide'
-import ShippingOptions from './ShippingOptions'
 import { FormattedMessage, defineMessages } from 'react-intl'
+
+import ShippingOptions from './ShippingOptions'
+
 const { removeValidation } = helpers
 
 defineMessages({

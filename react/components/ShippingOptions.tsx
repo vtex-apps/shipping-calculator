@@ -1,9 +1,10 @@
 import React, { FunctionComponent, Fragment } from 'react'
 import { Radio } from 'vtex.styleguide'
+import { FormattedMessage } from 'react-intl'
+
 import ShippingInfo from './ShippingInfo'
 import DeliveryOptionsAvailability from './DeliveryOptionsAvailability'
 import { slugify } from '../utils/slugify'
-import { FormattedMessage } from 'react-intl'
 
 interface CustomProps {
   numberOfItems: number
@@ -46,6 +47,7 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
         options.length > 0 &&
         options.map((option, i) => {
           const optionId = slugify(`shipping-option-${option.id}`)
+          // eslint-disable-next-line
           const isLast = i + 1 >= options.length
 
           return (

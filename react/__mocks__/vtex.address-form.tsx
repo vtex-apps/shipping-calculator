@@ -5,7 +5,6 @@ import {
   PostalCodeGetter,
   getAddressByGeolocation,
 } from '@vtex/address-form'
-
 import { Component } from 'react'
 
 function injectRules(component: Component) {
