@@ -83,6 +83,7 @@ const EstimateShipping: FunctionComponent<CustomProps> = ({
         address={address}
         Input={StyleguideInput}
         onChangeAddress={handleAddressChange}
+        shouldHandleAddressChangeOnMount
       >
         {showResult ? (
           <ShippingResult
