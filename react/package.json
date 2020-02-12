@@ -1,4 +1,5 @@
 {
+  "version": "0.8.1",
   "scripts": {
     "test": "vtex-test-tools test",
     "lint": "tsc --noEmit && eslint --ext ts,tsx ."
@@ -9,12 +10,7 @@
     "ramda": "^0.26.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-intl": "^2.7.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn test"
-    }
+    "react-intl": "3.9.1"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7",
@@ -30,12 +26,12 @@
     "@vtex/styleguide": "^9.95.0",
     "@vtex/test-tools": "^1.2.0",
     "apollo-client": "^2.5.1",
-    "eslint": "^5.16.0",
-    "eslint-config-vtex-react": "^4.1.0",
-    "husky": "^3.0.8",
-    "prettier": "^1.18.2",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "3.7.3"
-  },
-  "version": "0.8.1"
+    "vtex.address-form": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.4.3/public/_types/react",
+    "vtex.country-codes": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.country-codes@2.0.1/public/_types/react",
+    "vtex.formatted-price": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.formatted-price@0.3.2/public/@types/vtex.formatted-price",
+    "vtex.native-types": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.native-types@0.5.4/public/@types/vtex.native-types",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.91.0/public/@types/vtex.render-runtime",
+    "vtex.shipping-estimate-translator": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.1.2/public/_types/react",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.109.4/public/@types/vtex.styleguide"
+  }
 }
