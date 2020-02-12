@@ -47,6 +47,7 @@ const ShippingOptions: FunctionComponent<CustomProps> = ({
         options.length > 0 &&
         options.map((option, i) => {
           const optionId = slugify(`shipping-option-${option.id}`)
+          // eslint-disable-next-line
           const isLast = i + 1 >= options.length
 
           return (
