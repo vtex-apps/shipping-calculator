@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 import { FormattedPrice } from 'vtex.formatted-price'
+
 import { slugify } from '../utils/slugify'
 
 interface CustomProps {

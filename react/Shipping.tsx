@@ -95,8 +95,8 @@ interface ShippingProps {
   deliveryOptions: DeliveryOption[]
   insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
   loading: boolean
-  numberOfItems: number
-  numberOfUnavailableItems: number
+  numberOfItems?: number
+  numberOfUnavailableItems?: number
   selectDeliveryOption: (option: string) => void
   selectedAddress: Address
   title: string

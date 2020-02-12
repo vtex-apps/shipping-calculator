@@ -1,9 +1,10 @@
 import React, { FunctionComponent, Fragment } from 'react'
 import { Radio } from 'vtex.styleguide'
+import { FormattedMessage } from 'react-intl'
+
 import ShippingInfo from './ShippingInfo'
 import DeliveryOptionsAvailability from './DeliveryOptionsAvailability'
 import { slugify } from '../utils/slugify'
-import { FormattedMessage } from 'react-intl'
 
 interface CustomProps {
   numberOfItems: number
