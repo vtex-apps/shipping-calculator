@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.8.3] - 2020-02-17
 ### Fixed
 - Calculate button not working when user didn't edit the zipcode after entering edit mode.
 
