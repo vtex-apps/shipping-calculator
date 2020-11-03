@@ -1,66 +1,71 @@
-import React, { useState, FunctionComponent } from 'react'
-import { FormattedMessage, defineMessages } from 'react-intl'
+import React, { useState, useCallback } from 'react'
+import { OrderShipping } from 'vtex.order-shipping'
+import { ShippingHeader, ShippingOptionList } from 'vtex.checkout-shipping'
+import { AddressContext } from 'vtex.address-context'
+import { LocationInput } from 'vtex.place-components'
+import { FormattedMessage } from 'react-intl'
 import { ButtonPlain } from 'vtex.styleguide'
-import { Loading } from 'vtex.render-runtime'
 
-import EstimateShipping from './components/EstimateShipping'
-import { useShipping } from './Shipping'
+const { useOrderShipping } = OrderShipping
+const { useAddressContext } = AddressContext
 
-const messages = defineMessages({
-  viewDeliveryOptions: {
-    defaultMessage: 'View delivery options',
-    id: 'store/shipping-calculator.viewDeliveryOptions',
-  },
-})
-
-const ShippingCalculator: FunctionComponent = () => {
+const ShippingCalculator: React.VFC = () => {
   const {
-    canEditData,
-    countries,
     deliveryOptions,
-    insertAddress,
-    loading,
-    numberOfItems,
-    numberOfUnavailableItems,
     selectDeliveryOption,
     selectedAddress,
-  } = useShipping()
+    insertAddress,
+  } = useOrderShipping()
+  const { address, setAddress } = useAddressContext()
+  const [editingAddress, setEditingAddress] = useState(!address)
+  const shouldInitiallyShowShippingEstimate = !!selectedAddress?.postalCode
 
-  const shouldShowShippingEstimate =
-    selectedAddress && !!selectedAddress.postalCode
-
-  const [showEstimateShipping, setShowEstimateShipping] = useState<boolean>(
-    shouldShowShippingEstimate
+  const [showShippingEstimate, setShowShippingEstimate] = useState(
+    shouldInitiallyShowShippingEstimate
   )
 
-  if (loading) {
-    return <Loading />
+  const handleDeliveryOptionDeselect = () => {
+    selectDeliveryOption(null as any)
+  }
+
+  const handleAddressSuccess = useCallback(
+    createdAddress => {
+      return insertAddress(createdAddress).then(() => {
+        setEditingAddress(false)
+      })
+    },
+    [insertAddress]
+  )
+
+  if (!showShippingEstimate) {
+    return (
+      <div>
+        <ButtonPlain onClick={() => setShowShippingEstimate(true)}>
+          <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />
+        </ButtonPlain>
+      </div>
+    )
   }
 
   return (
-    <div>
-      {showEstimateShipping || shouldShowShippingEstimate ? (
-        <EstimateShipping
-          canEditData={canEditData}
-          selectedAddress={selectedAddress}
+    <>
+      <ShippingHeader
+        onEditAddress={() => {
+          setEditingAddress(true)
+          setAddress(null)
+        }}
+      />
+
+      {!editingAddress ? (
+        <ShippingOptionList
           deliveryOptions={deliveryOptions}
-          countries={countries}
-          insertAddress={insertAddress}
-          selectDeliveryOption={selectDeliveryOption}
-          numberOfItems={numberOfItems}
-          numberOfUnavailableItems={numberOfUnavailableItems}
+          onDeliveryOptionSelected={selectDeliveryOption}
+          onDeliveryOptionDeselected={handleDeliveryOptionDeselect}
         />
       ) : (
-        <div>
-          <ButtonPlain
-            id="view-delivery-options"
-            onClick={() => setShowEstimateShipping(true)}
-          >
-            <FormattedMessage id={messages.viewDeliveryOptions.id} />
-          </ButtonPlain>
-        </div>
+        <LocationInput onSuccess={handleAddressSuccess} />
       )}
-    </div>
+    </>
   )
 }
 

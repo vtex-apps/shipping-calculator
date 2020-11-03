@@ -1,5 +1,13 @@
-import React, { createContext, useContext, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
+import { OrderShipping } from 'vtex.order-shipping'
+import { useAddressRules } from 'vtex.checkout-shipping'
+import { AddressContext } from 'vtex.address-context'
+import { Loading } from 'vtex.render-runtime'
+import { OrderForm } from 'vtex.order-manager'
+
+const { useOrderForm } = OrderForm
+const { useOrderShipping } = OrderShipping
 
 const messages = defineMessages({
   delivery: {
@@ -16,94 +24,45 @@ const messages = defineMessages({
   },
 })
 
-interface InsertAddressResult {
-  success: boolean
-  orderForm: any
+interface ShippingProps {
+  children: ReactNode
+  title: string
 }
 
-interface Context {
-  canEditData: boolean
-  countries: string[]
-  deliveryOptions: DeliveryOption[]
-  insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
-  loading: boolean
-  numberOfItems: number
-  numberOfUnavailableItems: number
-  selectDeliveryOption: (option: string) => void
-  selectedAddress: Address
-}
-
-const ShippingContext = createContext<Context | undefined>(undefined)
-
-export const useShipping = () => {
-  const context = useContext(ShippingContext)
-  if (context === undefined) {
-    throw new Error('useShipping must be used within a Shipping component')
-  }
-
-  return context
-}
-
-const Shipping: StorefrontFunctionComponent<ShippingProps> = ({
+const Shipping: React.VFC<ShippingProps> = ({
   children,
-  canEditData,
-  countries,
-  deliveryOptions,
-  insertAddress,
-  loading,
-  numberOfItems = 0,
-  numberOfUnavailableItems = 0,
-  selectDeliveryOption,
-  selectedAddress,
-  title,
+  title = messages.delivery.id,
 }) => {
+  const { selectedAddress, countries } = useOrderShipping()
+  const addressRules = useAddressRules()
+
   return (
-    <ShippingContext.Provider
-      value={{
-        canEditData,
-        countries,
-        deliveryOptions,
-        insertAddress,
-        loading,
-        numberOfItems,
-        numberOfUnavailableItems,
-        selectDeliveryOption,
-        selectedAddress,
-      }}
+    <AddressContext.AddressContextProvider
+      address={selectedAddress!}
+      countries={countries}
+      rules={addressRules}
     >
       <div className="flex flex-column c-on-base">
-        <h5 className="t-heading-5 mt0 mb5">
+        <h5 className="t-heading-5 mt0 mb6">
           <FormattedMessage id={title} />
         </h5>
         {children}
       </div>
-    </ShippingContext.Provider>
+    </AddressContext.AddressContextProvider>
   )
 }
-
-Shipping.defaultProps = {
-  canEditData: false,
-  countries: [],
-  deliveryOptions: [],
-  title: messages.delivery.id,
-}
-
-interface ShippingProps {
-  children: ReactNode
-  canEditData: boolean
-  countries: string[]
-  deliveryOptions: DeliveryOption[]
-  insertAddress: (address: CheckoutAddress) => Promise<InsertAddressResult>
-  loading: boolean
-  numberOfItems?: number
-  numberOfUnavailableItems?: number
-  selectDeliveryOption: (option: string) => void
-  selectedAddress: Address
-  title: string
-}
-
-Shipping.schema = {
+;(Shipping as any).schema = {
   title: messages.label.id,
 }
 
-export default Shipping
+const ShippingWithLoading: typeof Shipping = props => {
+  const { loading } = useOrderForm()
+
+  if (loading) {
+    return <Loading />
+  }
+
+  return <Shipping {...props}>{props.children}</Shipping>
+}
+
+export default ShippingWithLoading

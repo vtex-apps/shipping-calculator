@@ -5,10 +5,7 @@
     "composition": "children",
     "content": {
       "$ref": "#/definitions/ShippingCalculator"
-    }
-  },
-  "estimate-shipping": {
-    "component": "ShippingCalculator",
+    },
     "preview": {
       "type": "box",
       "height": 30,
@@ -17,5 +14,8 @@
         "padding": 0
       }
     }
+  },
+  "estimate-shipping": {
+    "component": "ShippingCalculator"
   }
 }
