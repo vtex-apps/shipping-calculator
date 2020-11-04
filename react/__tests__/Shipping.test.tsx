@@ -1,5 +1,7 @@
 import { render } from '@vtex/test-tools/react'
 import React from 'react'
+import { OrderShippingContext } from 'vtex.order-shipping/OrderShipping'
+import { OrderFormContext } from 'vtex.order-manager/OrderForm'
 
 import Shipping from '../Shipping'
 import ShippingCalculator from '../ShippingCalculator'
@@ -56,19 +58,28 @@ describe('Shipping', () => {
       selectDeliveryOption,
       selectedAddress,
     } = customProps
+
     const wrapper = render(
-      <Shipping
-        countries={countries}
-        deliveryOptions={deliveryOptions}
-        insertAddress={insertAddress}
-        loading={false}
-        selectDeliveryOption={selectDeliveryOption}
-        selectedAddress={selectedAddress}
-        title="Title"
-        canEditData
+      <OrderFormContext.Provider
+        value={{
+          loading: false,
+          orderForm: { shipping: { selectedAddress, deliveryOptions } },
+        }}
       >
-        <ShippingCalculator />
-      </Shipping>
+        <OrderShippingContext.Provider
+          value={{
+            countries,
+            selectedAddress,
+            deliveryOptions,
+            selectDeliveryOption,
+            insertAddress,
+          }}
+        >
+          <Shipping title="Title">
+            <ShippingCalculator />
+          </Shipping>
+        </OrderShippingContext.Provider>
+      </OrderFormContext.Provider>
     )
     return wrapper
   }
