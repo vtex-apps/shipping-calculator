@@ -6029,10 +6029,6 @@ vtex-tachyons@^3.2.0:
   version "0.4.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-context@0.4.0/public/@types/vtex.address-context#6e5fb0cf8fa8776934c1a1de5785bc825c223f91"
 
-"vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.6.3/public/_types/react":
-  version "0.0.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.6.3/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
-
 "vtex.checkout-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-components@0.4.1/public/@types/vtex.checkout-components":
   version "0.4.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-components@0.4.1/public/@types/vtex.checkout-components#c6674e694bf5155f4ec44ff97407ea05bfa817f1"
