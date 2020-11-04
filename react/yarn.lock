@@ -6025,21 +6025,21 @@ vtex-tachyons@^3.2.0:
   resolved "https://registry.yarnpkg.com/vtex-tachyons/-/vtex-tachyons-3.2.0.tgz#81cf3491fea110e50ca91c318c02c714b6d0ae62"
   integrity sha512-RUK2HX/Z2+GTrFHcA3+gfl1Tib33WL49i6pnUZhE6/imHmiUBMfWQL7qQbYDhI9Pws57KFgdF+qSnla3Jjg6Fw==
 
-"vtex.address-context@https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.address-context@0.3.0+build1603978926/public/@types/vtex.address-context":
-  version "0.3.0"
-  resolved "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.address-context@0.3.0+build1603978926/public/@types/vtex.address-context#75b8ce13ad18fc95a057116ac954d68ade33608f"
+"vtex.address-context@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-context@0.4.0/public/@types/vtex.address-context":
+  version "0.4.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-context@0.4.0/public/@types/vtex.address-context#6e5fb0cf8fa8776934c1a1de5785bc825c223f91"
 
 "vtex.address-form@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.6.3/public/_types/react":
   version "0.0.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.6.3/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
-"vtex.checkout-components@https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-components@0.4.0+build1603997531/public/@types/vtex.checkout-components":
-  version "0.4.0"
-  resolved "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-components@0.4.0+build1603997531/public/@types/vtex.checkout-components#f1b25471b3d6dd47c8b6a2bdc6b3764a8274fa90"
+"vtex.checkout-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-components@0.4.1/public/@types/vtex.checkout-components":
+  version "0.4.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-components@0.4.1/public/@types/vtex.checkout-components#c6674e694bf5155f4ec44ff97407ea05bfa817f1"
 
-"vtex.checkout-shipping@https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-shipping@0.3.1+build1603997439/public/@types/vtex.checkout-shipping":
-  version "0.3.1"
-  resolved "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-shipping@0.3.1+build1603997439/public/@types/vtex.checkout-shipping#7b5b35dcc4711256fc099e5f987f330757fe1803"
+"vtex.checkout-shipping@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-shipping@0.4.0/public/@types/vtex.checkout-shipping":
+  version "0.4.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-shipping@0.4.0/public/@types/vtex.checkout-shipping#e7d4f4e1a8eb97151f806015282d4835ce22c894"
 
 "vtex.country-codes@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.country-codes@2.0.1/public/_types/react":
   version "0.0.0"
@@ -6057,17 +6057,17 @@ vtex-tachyons@^3.2.0:
   version "0.8.7"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.8.7/public/@types/vtex.order-manager#d666dbf9c6d630dba38ac26e815ffaa3811933df"
 
-"vtex.order-shipping@https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.order-shipping@0.5.0+build1603995521/public/@types/vtex.order-shipping":
-  version "0.5.0"
-  resolved "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.order-shipping@0.5.0+build1603995521/public/@types/vtex.order-shipping#3539c3ba1d86cd0fd0d68958b45bdb6ae5a9e47f"
+"vtex.order-shipping@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-shipping@0.6.0/public/@types/vtex.order-shipping":
+  version "0.6.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-shipping@0.6.0/public/@types/vtex.order-shipping#1fe8aacc58874a5d247055b0144439db5d08a989"
 
-"vtex.place-components@https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.place-components@0.10.0+build1604001404/public/@types/vtex.place-components":
-  version "0.10.0"
-  resolved "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.place-components@0.10.0+build1604001404/public/@types/vtex.place-components#6d343305541aad8a830844011c4b16d31907d150"
+"vtex.place-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.place-components@0.12.0/public/@types/vtex.place-components":
+  version "0.12.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.place-components@0.12.0/public/@types/vtex.place-components#f20df4f32af37b0997158f97a565e39ab0ca13b4"
 
-"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.2/public/@types/vtex.render-runtime":
-  version "8.124.2"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.2/public/@types/vtex.render-runtime#d535e94b7f0a1fe69c79a2cb107f8c4a227a8b79"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.3/public/@types/vtex.render-runtime":
+  version "8.124.3"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.3/public/@types/vtex.render-runtime#8158e34bd24b4a51cb5d463eeef4e37af626c2d5"
 
 "vtex.shipping-estimate-translator@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.2/public/@types/vtex.shipping-estimate-translator":
   version "2.2.2"
