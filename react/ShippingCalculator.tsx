@@ -24,10 +24,6 @@ const ShippingCalculator: React.VFC = () => {
     shouldInitiallyShowShippingEstimate
   )
 
-  const handleDeliveryOptionDeselect = () => {
-    selectDeliveryOption(null as any)
-  }
-
   const handleAddressSuccess = useCallback(
     createdAddress => {
       return insertAddress(createdAddress).then(() => {
@@ -60,7 +56,6 @@ const ShippingCalculator: React.VFC = () => {
         <ShippingOptionList
           deliveryOptions={deliveryOptions}
           onDeliveryOptionSelected={selectDeliveryOption}
-          onDeliveryOptionDeselected={handleDeliveryOptionDeselect}
         />
       ) : (
         <LocationInput onSuccess={handleAddressSuccess} />

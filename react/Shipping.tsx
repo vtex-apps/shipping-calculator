@@ -38,7 +38,7 @@ const Shipping: React.VFC<ShippingProps> = ({
 
   return (
     <AddressContext.AddressContextProvider
-      address={selectedAddress!}
+      address={selectedAddress}
       countries={countries}
       rules={addressRules}
     >
