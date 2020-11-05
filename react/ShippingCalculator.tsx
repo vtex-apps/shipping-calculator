@@ -36,7 +36,10 @@ const ShippingCalculator: React.VFC = () => {
   if (!showShippingEstimate) {
     return (
       <div>
-        <ButtonPlain onClick={() => setShowShippingEstimate(true)}>
+        <ButtonPlain
+          id="view-delivery-options"
+          onClick={() => setShowShippingEstimate(true)}
+        >
           <FormattedMessage id="store/shipping-calculator.viewDeliveryOptions" />
         </ButtonPlain>
       </div>
