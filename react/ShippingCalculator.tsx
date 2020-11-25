@@ -12,12 +12,14 @@ const { useAddressContext } = AddressContext
 const ShippingCalculator: React.VFC = () => {
   const {
     deliveryOptions,
+    pickupOptions,
     selectDeliveryOption,
+    selectPickupOption,
     selectedAddress,
     insertAddress,
   } = useOrderShipping()
   const { address, setAddress } = useAddressContext()
-  const [editingAddress, setEditingAddress] = useState(!address)
+  const [editingAddress, setEditingAddress] = useState(!address?.postalCode)
   const shouldInitiallyShowShippingEstimate = !!selectedAddress?.postalCode
 
   const [showShippingEstimate, setShowShippingEstimate] = useState(
@@ -58,7 +60,9 @@ const ShippingCalculator: React.VFC = () => {
       {!editingAddress ? (
         <ShippingOptionList
           deliveryOptions={deliveryOptions}
+          pickupOptions={pickupOptions}
           onDeliveryOptionSelected={selectDeliveryOption}
+          onPickupOptionSelected={selectPickupOption}
         />
       ) : (
         <LocationInput onSuccess={handleAddressSuccess} />
