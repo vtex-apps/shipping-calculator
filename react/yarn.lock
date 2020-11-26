@@ -6033,9 +6033,9 @@ vtex-tachyons@^3.2.0:
   version "0.5.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-components@0.5.1/public/@types/vtex.checkout-components#77d654aea75319f3024612fe7b263777b116105f"
 
-"vtex.checkout-shipping@https://jeff--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-shipping@0.4.1+build1606314427/public/@types/vtex.checkout-shipping":
-  version "0.4.1"
-  resolved "https://jeff--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-shipping@0.4.1+build1606314427/public/@types/vtex.checkout-shipping#98649f0dd0696ee8a8a97d583dc52b7084c0674c"
+"vtex.checkout-shipping@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-shipping@0.5.1/public/@types/vtex.checkout-shipping":
+  version "0.5.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-shipping@0.5.1/public/@types/vtex.checkout-shipping#d3ac57aef102a33d5cf383484d41c17633d05632"
 
 "vtex.country-codes@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.country-codes@2.0.1/public/_types/react":
   version "0.0.0"
@@ -6053,9 +6053,9 @@ vtex-tachyons@^3.2.0:
   version "0.8.7"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.8.7/public/@types/vtex.order-manager#d666dbf9c6d630dba38ac26e815ffaa3811933df"
 
-"vtex.order-shipping@https://jeff--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.order-shipping@0.6.0+build1606314361/public/@types/vtex.order-shipping":
+"vtex.order-shipping@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-shipping@0.6.0/public/@types/vtex.order-shipping":
   version "0.6.0"
-  resolved "https://jeff--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.order-shipping@0.6.0+build1606314361/public/@types/vtex.order-shipping#3a2675a70f600237b6bb92dbc9c70b084b8361c8"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-shipping@0.6.0/public/@types/vtex.order-shipping#1fe8aacc58874a5d247055b0144439db5d08a989"
 
 "vtex.place-components@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.place-components@0.13.1/public/@types/vtex.place-components":
   version "0.13.1"
