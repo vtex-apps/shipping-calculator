@@ -1,6 +1,10 @@
 import React, { useState, useCallback } from 'react'
 import { OrderShipping } from 'vtex.order-shipping'
-import { ShippingHeader, ShippingOptionList } from 'vtex.checkout-shipping'
+import {
+  ShippingHeader,
+  ShippingOptionList,
+  NewAddressForm,
+} from 'vtex.checkout-shipping'
 import { AddressContext } from 'vtex.address-context'
 import { LocationInput } from 'vtex.place-components'
 import { FormattedMessage } from 'react-intl'
@@ -50,22 +54,24 @@ const ShippingCalculator: React.VFC = () => {
 
   return (
     <>
-      <ShippingHeader
-        onEditAddress={() => {
-          setEditingAddress(true)
-          setAddress(null)
-        }}
-      />
-
       {!editingAddress ? (
-        <ShippingOptionList
-          deliveryOptions={deliveryOptions}
-          pickupOptions={pickupOptions}
-          onDeliveryOptionSelected={selectDeliveryOption}
-          onPickupOptionSelected={selectPickupOption}
-        />
+        <div>
+          <ShippingHeader
+            onEditAddress={() => {
+              setEditingAddress(true)
+              setAddress(null)
+            }}
+          />
+
+          <ShippingOptionList
+            deliveryOptions={deliveryOptions}
+            pickupOptions={pickupOptions}
+            onDeliveryOptionSelected={selectDeliveryOption}
+            onPickupOptionSelected={selectPickupOption}
+          />
+        </div>
       ) : (
-        <LocationInput onSuccess={handleAddressSuccess} />
+        <NewAddressForm onAddressCreated={handleAddressSuccess} />
       )}
     </>
   )
