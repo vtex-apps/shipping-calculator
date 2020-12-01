@@ -6,7 +6,6 @@ import {
   NewAddressForm,
 } from 'vtex.checkout-shipping'
 import { AddressContext } from 'vtex.address-context'
-import { LocationInput } from 'vtex.place-components'
 import { FormattedMessage } from 'react-intl'
 import { ButtonPlain } from 'vtex.styleguide'
 
