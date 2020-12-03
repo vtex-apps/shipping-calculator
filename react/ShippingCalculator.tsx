@@ -53,22 +53,20 @@ const ShippingCalculator: React.VFC = () => {
 
   return (
     <>
-      {!editingAddress ? (
-        <div>
-          <ShippingHeader
-            onEditAddress={() => {
-              setEditingAddress(true)
-              setAddress(null)
-            }}
-          />
+      <ShippingHeader
+        onEditAddress={() => {
+          setEditingAddress(true)
+          setAddress(null)
+        }}
+      />
 
-          <ShippingOptionList
-            deliveryOptions={deliveryOptions}
-            pickupOptions={pickupOptions}
-            onDeliveryOptionSelected={selectDeliveryOption}
-            onPickupOptionSelected={selectPickupOption}
-          />
-        </div>
+      {!editingAddress ? (
+        <ShippingOptionList
+          deliveryOptions={deliveryOptions}
+          pickupOptions={pickupOptions}
+          onDeliveryOptionSelected={selectDeliveryOption}
+          onPickupOptionSelected={selectPickupOption}
+        />
       ) : (
         <NewAddressForm onAddressCreated={handleAddressSuccess} />
       )}
