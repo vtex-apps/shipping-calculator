@@ -41,3 +41,18 @@ export const ShippingOptionList: React.FC<any> = ({ deliveryOptions }) => {
     </ul>
   )
 }
+
+export const ShippingForm = () => {
+  const { orderForm } = useOrderForm()
+
+  return (
+    <div>
+      <span>{orderForm.shipping.selectedAddress.postalCode}</span>
+      <ul>
+        {orderForm.shipping.deliveryOptions.map((deliveryOption: any) => (
+          <li key={deliveryOption.id}>{deliveryOption.id}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}

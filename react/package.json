@@ -25,20 +25,20 @@
     "@types/react-intl": "^2.3.17",
     "@vtex/country-codes": "^1.0.2",
     "@vtex/styleguide": "^9.95.0",
-    "@vtex/test-tools": "^3.0.2",
+    "@vtex/test-tools": "^3.3.2",
     "apollo-client": "^2.5.1",
     "typescript": "3.9.7",
-    "vtex.address-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-context@0.5.0/public/@types/vtex.address-context",
+    "vtex.address-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-context@0.6.1/public/@types/vtex.address-context",
     "vtex.checkout-components": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-components@0.5.1/public/@types/vtex.checkout-components",
-    "vtex.checkout-shipping": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-shipping@0.6.0/public/@types/vtex.checkout-shipping",
+    "vtex.checkout-shipping": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-shipping@0.7.1/public/@types/vtex.checkout-shipping",
     "vtex.country-codes": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.country-codes@2.0.1/public/_types/react",
     "vtex.formatted-price": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.formatted-price@0.4.0/public/@types/vtex.formatted-price",
-    "vtex.native-types": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.native-types@0.7.4/public/@types/vtex.native-types",
-    "vtex.order-manager": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.8.8/public/@types/vtex.order-manager",
+    "vtex.native-types": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.native-types@0.7.5/public/@types/vtex.native-types",
+    "vtex.order-manager": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.9.0/public/@types/vtex.order-manager",
     "vtex.order-shipping": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-shipping@0.7.0/public/@types/vtex.order-shipping",
-    "vtex.place-components": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.place-components@0.13.2/public/@types/vtex.place-components",
-    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.3/public/@types/vtex.render-runtime",
+    "vtex.place-components": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.place-components@0.14.0/public/@types/vtex.place-components",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.126.11/public/@types/vtex.render-runtime",
     "vtex.shipping-estimate-translator": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.2/public/@types/vtex.shipping-estimate-translator",
-    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.134.0/public/@types/vtex.styleguide"
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.135.2/public/@types/vtex.styleguide"
   }
 }
