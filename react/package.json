@@ -25,7 +25,7 @@
     "@types/react-intl": "^2.3.17",
     "@vtex/country-codes": "^1.0.2",
     "@vtex/styleguide": "^9.95.0",
-    "@vtex/test-tools": "^3.0.2",
+    "@vtex/test-tools": "^3.3.2",
     "apollo-client": "^2.5.1",
     "typescript": "3.9.7",
     "vtex.address-context": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-context@0.6.1/public/@types/vtex.address-context",

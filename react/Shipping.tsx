@@ -36,6 +36,10 @@ const Shipping: React.VFC<ShippingProps> = ({
   const { selectedAddress, countries } = useOrderShipping()
   const addressRules = useAddressRules()
 
+  if (addressRules == null) {
+    return <Loading />
+  }
+
   return (
     <AddressContext.AddressContextProvider
       address={selectedAddress}
