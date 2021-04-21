@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- I18n Da, Fi, Jp, Kr and Ro.
+
+### Changed
+- Crowdin configuration file.
 ## [0.11.0] - 2021-02-22
 ### Changed
 - Updated to use `ShippingForm` component from `checkout-shipping`.
