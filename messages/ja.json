@@ -1,0 +1,12 @@
+{
+  "store/shipping-calculator.delivery": "配送",
+  "store/shipping-calculator.deliveryFor": "オプション",
+  "store/shipping-calculator.edit": "編集する",
+  "store/shipping-calculator.estimate": "推定",
+  "store/shipping-calculator.viewDeliveryOptions": "配送オプションを閲覧",
+  "store/shipping-calculator.allItemsUnavailable": "{numberOfUnavailableItems, plural, one {この製品} other {すべての製品}} をこちらの住所に配送できません。",
+  "store/shipping-calculator.unavailableItems": "{numberOfUnavailableItems, plural, one {この住所に配送できない製品がハイライトされています} other {この住所に配送できない # 個の製品がハイライトされています}}。",
+  "store/shipping-calculator.optionsForRemainingProducts": "残りの {numberOfItems, plural, one {製品} other {製品}} のための {numberOfOptions, plural, one {オプション} other {オプション}}",
+  "admin/editor.shipping-calculator.label": "配送",
+  "admin/editor.shipping-calculator.title": "タイトル"
+}
