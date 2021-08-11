@@ -1,0 +1,12 @@
+{
+  "store/shipping-calculator.delivery": "배달",
+  "store/shipping-calculator.deliveryFor": "옵션",
+  "store/shipping-calculator.edit": "편집",
+  "store/shipping-calculator.estimate": "견적",
+  "store/shipping-calculator.viewDeliveryOptions": "배송 옵션 보기",
+  "store/shipping-calculator.allItemsUnavailable": "{numberOfUnavailableItems, plural, one {제품이} other {모든 제품이}} 이 주소로 배송될 수 없습니다.",
+  "store/shipping-calculator.unavailableItems": "{numberOfUnavailableItems, plural, one {개의 이 주소로 배송할 수 없는 제품이 강조 표시되었습니다} other {#개의 이 주소로 배송할 수 없는 제품이 강조 표시되었습니다}}.",
+  "store/shipping-calculator.optionsForRemainingProducts": "남은 {numberOfItems, plural, one {제품} other {제품}} {numberOfOptions, plural, one {옵션} other {옵션}}",
+  "admin/editor.shipping-calculator.label": "배달",
+  "admin/editor.shipping-calculator.title": "제목"
+}
