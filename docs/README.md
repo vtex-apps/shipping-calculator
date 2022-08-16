@@ -1,22 +1,30 @@
-# VTEX IO Base Component
+📢 Use this project, [contribute](https://github.com/vtex-apps/shipping-calculator) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+
+# Shipping Calculator
+
+> :warning: *Although ready to be installed, the Shipping Calculator app is currently an **open-beta project**. Bear in mind that due to that status, you can expect an accelerated state of evolution.*
+
+<!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- DOCS-IGNORE:end -->
 
-This demo component shows you how to make a simple yet complete VTEX IO component.
+TBC
 
-It shows a simple demonstration of the following features:
+## Configuration 
 
-- Declaring a component interface in `store/interfaces.json`.
-- Declaring a schema to receive props via Storefront.
-- Using the `messages` feature to have localized strings.
-- Using an NPM package like `react-intl`
-- Using another VTEX IO App like `vtex.styleguide`.
-- Using CSS Modules to make your component customizable via CSS on a store theme.
-- Using tachyons tokens to quickly style your components.
+🚧 To be defined.
+
+## Customization
+
+🚧 To be defined.
+
+<!-- DOCS-IGNORE:start -->
+
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -26,3 +34,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
+
+<!-- DOCS-IGNORE:end -->
