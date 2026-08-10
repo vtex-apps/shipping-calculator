@@ -1,0 +1,12 @@
+{
+  "store/shipping-calculator.delivery": "التسليم",
+  "store/shipping-calculator.deliveryFor": "خيار لـ",
+  "store/shipping-calculator.edit": "تعديل",
+  "store/shipping-calculator.estimate": "تقدير",
+  "store/shipping-calculator.viewDeliveryOptions": "عرض خيارات التسليم",
+  "store/shipping-calculator.allItemsUnavailable": "لا يمكن تسليم {numberOfUnavailableItems, plural, one {المنتج} other {المنتجات}} لهذا العنوان.",
+  "store/shipping-calculator.unavailableItems": "{numberOfUnavailableItems, plural, one {تم تمييز المنتج الذي لا يمكن تسليمه إلى هذا العنوان} other {# تم تمييز المنتجات الأخرى التي لا يمكن تسليمها إلى هذا العنوان}}.",
+  "store/shipping-calculator.optionsForRemainingProducts": "{numberOfOptions, plural, one {خيار} other {خيارات}} لـ  {numberOfItems, plural, one {للمنتج} other {المنتجات}} المتبقي(ة)",
+  "admin/editor.shipping-calculator.label": "التسليم",
+  "admin/editor.shipping-calculator.title": "العنوان"
+}

@@ -1,0 +1,12 @@
+{
+  "store/shipping-calculator.delivery": "การจัดส่ง",
+  "store/shipping-calculator.deliveryFor": "ตัวเลือกสำหรับ",
+  "store/shipping-calculator.edit": "แก้ไข",
+  "store/shipping-calculator.estimate": "ประมาณการ",
+  "store/shipping-calculator.viewDeliveryOptions": "ดูตัวเลือกการจัดส่ง",
+  "store/shipping-calculator.allItemsUnavailable": "{numberOfUnavailableItems, plural, one {ผลิตภัณฑ์} other {ผลิตภัณฑ์ทั้งหมด}} ไม่สามารถจัดส่งไปยังที่อยู่นี้ได้",
+  "store/shipping-calculator.unavailableItems": "{numberOfUnavailableItems, plural, one {ผลิตภัณฑ์ที่ไม่สามารถจัดส่งไปยังที่อยู่นี้ได้ถูกไฮไลต์} other {# ผลิตภัณฑ์ที่ไม่สามารถจัดส่งไปยังที่อยู่นี้ได้ถูกไฮไลต์}}",
+  "store/shipping-calculator.optionsForRemainingProducts": "{numberOfOptions, plural, one {ตัวเลือก} other {ตัวเลือก}} สำหรับคงเหลือ {numberOfItems, plural, one {ผลิตภัณฑ์} other {ผลิตภัณฑ์}}",
+  "admin/editor.shipping-calculator.label": "การจัดส่ง",
+  "admin/editor.shipping-calculator.title": "ชื่อหัวข้อ"
+}

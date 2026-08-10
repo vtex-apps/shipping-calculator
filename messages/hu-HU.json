@@ -1,0 +1,12 @@
+{
+  "store/shipping-calculator.delivery": "Kézbesítés",
+  "store/shipping-calculator.deliveryFor": "Lehetőségek a következőhöz:",
+  "store/shipping-calculator.edit": "szerkesztés",
+  "store/shipping-calculator.estimate": "becslés",
+  "store/shipping-calculator.viewDeliveryOptions": "Kézbesítési lehetőségek megtekintése",
+  "store/shipping-calculator.allItemsUnavailable": "{numberOfUnavailableItems, plural, one {A termék nem} other {Egy termék sem}} kézbesíthető erre a címre.",
+  "store/shipping-calculator.unavailableItems": "{numberOfUnavailableItems, plural, one {Egy termék, amelyet nem lehetett kézbesíteni erre a címre, kiemelésre került} other {# termék, amelyet nem lehetett kézbesíteni erre a címre, kiemelésre került}}.",
+  "store/shipping-calculator.optionsForRemainingProducts": "{numberOfOptions, plural, one {lehetőség} other {lehetőség}} a hátralevő {numberOfItems, plural, one {termékhez} other {termékhez}}",
+  "admin/editor.shipping-calculator.label": "Kézbesítés",
+  "admin/editor.shipping-calculator.title": "Cím"
+}
